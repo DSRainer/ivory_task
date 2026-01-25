@@ -1,0 +1,623 @@
+{
+  "hero": {
+    "vimeoVideoId": "1070420095",
+    "autoplay": true,
+    "loop": true,
+    "muted": true
+  },
+  "featuredWork": [
+    {
+      "id": "figma",
+      "title": "FIGMA",
+      "slug": "figma",
+      "url": "/case-study/figma/",
+      "featuredImage": "https://i9.swiftpic.io/gpj/upscale:0;cover:427,284,face/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F12%2FFigma-Featured-1296x862.jpg?s=936c8377baa",
+      "featuredImage2x": "https://i2.swiftpic.io/gpj/upscale:0;cover:854,568,face/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F12%2FFigma-Featured-1296x862.jpg?s=e261b72c79b",
+      "featuredImage3x": "https://i1.swiftpic.io/gpj/upscale:0;cover:1281,852,face/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F12%2FFigma-Featured-2048x1362.jpg?s=1c9bc04fdf1",
+      "clientLogo": "https://i5.swiftpic.io/gpj/upscale:1;contain:59,59,transparent/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FFigma.png?s=aeb5ff040b5",
+      "clientLogo2x": "https://i8.swiftpic.io/gpj/upscale:1;contain:118,118,transparent/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FFigma.png?s=836dbb1cccb"
+    },
+    {
+      "id": "dp-world",
+      "title": "DP World India Championship",
+      "slug": "dp-world-india-championship",
+      "url": "/case-study/dp-world-india-championship/",
+      "featuredImage": "https://i9.swiftpic.io/gpj/upscale:0;cover:427,284,face/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FDP-World-Featured-New-3.jpeg?s=fc9ef12696f",
+      "featuredImage2x": "https://i3.swiftpic.io/gpj/upscale:0;cover:854,568,face/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FDP-World-Featured-New-3.jpeg?s=3dae91b8103",
+      "featuredImage3x": "https://i7.swiftpic.io/gpj/upscale:0;cover:1281,852,face/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FDP-World-Featured-New-3.jpeg?s=a71b57129ce",
+      "clientLogo": "https://i3.swiftpic.io/gpj/upscale:1;contain:59,59,transparent/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2FDP_World_2021_logo.png?s=a36634feb64",
+      "clientLogo2x": "https://i8.swiftpic.io/gpj/upscale:1;contain:118,118,transparent/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2FDP_World_2021_logo.png?s=83170ab607a"
+    },
+    {
+      "id": "ibm-think",
+      "title": "IBM Think on Tour Mumbai 2025",
+      "slug": "ibm-think-on-tour-mumbai-2025",
+      "url": "/case-study/ibm-think-on-tour-mumbai-2025/",
+      "featuredImage": "https://i8.swiftpic.io/gpj/upscale:0;cover:427,284,face/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FIBM-Think-02-2025-1296x864.jpg?s=a8955e5497f",
+      "featuredImage2x": "https://i2.swiftpic.io/gpj/upscale:0;cover:854,568,face/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FIBM-Think-02-2025-1296x864.jpg?s=270e424f057",
+      "featuredImage3x": "https://i3.swiftpic.io/gpj/upscale:0;cover:1281,852,face/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FIBM-Think-02-2025-2048x1365.jpg?s=33ae3109495",
+      "clientLogo": "https://i9.swiftpic.io/gpj/upscale:1;contain:59,59,transparent/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2F2025%2F04%2Fpurepng.com-ibm-logologobrand-logoiconslogos-251519939176ka7y8.png?s=97011bfc5b1",
+      "clientLogo2x": "https://i5.swiftpic.io/gpj/upscale:1;contain:118,118,transparent/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2F2025%2F04%2Fpurepng.com-ibm-logologobrand-logoiconslogos-251519939176ka7y8.png?s=5edda3ab895"
+    },
+    {
+      "id": "pinterest",
+      "title": "Pinterest Advertiser Summit",
+      "slug": "pinterest-advertiser-summit",
+      "url": "/case-study/pinterest-advertiser-summit/",
+      "featuredImage": "https://i0.swiftpic.io/gpj/upscale:0;cover:427,284,face/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F10%2FPinterest-Hero-Banner-1296x864.jpg?s=f07fe7b1199",
+      "featuredImage2x": "https://i9.swiftpic.io/gpj/upscale:0;cover:854,568,face/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F10%2FPinterest-Hero-Banner-1296x864.jpg?s=91e6a41bbff",
+      "featuredImage3x": "https://i9.swiftpic.io/gpj/upscale:0;cover:1281,852,face/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F10%2FPinterest-Hero-Banner-2048x1366.jpg?s=a9309a0ab9a",
+      "clientLogo": "https://i8.swiftpic.io/gpj/upscale:1;contain:59,59,transparent/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FPinterest-1.png?s=83a214d3b4c",
+      "clientLogo2x": "https://i5.swiftpic.io/gpj/upscale:1;contain:118,118,transparent/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FPinterest-1.png?s=ab5ab201eeb"
+    },
+    {
+      "id": "salesforce-tdx",
+      "title": "Salesforce TDX",
+      "slug": "salesforce-tdx",
+      "url": "/case-study/salesforce-tdx/",
+      "featuredImage": "https://i2.swiftpic.io/gpj/upscale:0;cover:427,284,face/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F09%2FSalesforce-TDX-03-1296x864.jpg?s=a276f091848",
+      "featuredImage2x": "https://i0.swiftpic.io/gpj/upscale:0;cover:854,568,face/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F09%2FSalesforce-TDX-03-1296x864.jpg?s=044824b6c22",
+      "featuredImage3x": "https://i5.swiftpic.io/gpj/upscale:0;cover:1281,852,face/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F09%2FSalesforce-TDX-03-2048x1365.jpg?s=5b21faa5050",
+      "clientLogo": "https://i0.swiftpic.io/gpj/upscale:1;contain:59,59,transparent/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2F2024%2F02%2FSalesforce-Logo.png?s=05e61537d35",
+      "clientLogo2x": "https://i0.swiftpic.io/gpj/upscale:1;contain:118,118,transparent/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2F2024%2F02%2FSalesforce-Logo.png?s=08c484ceb9f"
+    }
+  ],
+  "clientLogos": {
+    "column1": [
+      {
+        "name": "Oppo",
+        "slug": "oppo",
+        "image": "https://i5.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2FOppo-Logo.wine_.png?s=b59cbbd3c5d"
+      },
+      {
+        "name": "META",
+        "slug": "meta",
+        "image": "https://i7.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Fmeta_color_w.png?s=713386e3b12"
+      },
+      {
+        "name": "Wipro",
+        "slug": "wipro",
+        "image": "https://i5.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FWipro.png?s=5bd42d84e8d"
+      },
+      {
+        "name": "Lowe's Happy2bBack",
+        "slug": "lowes-happy2bback",
+        "image": "https://i4.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Flowes-logo-png-transparent.png?s=dba403d8f7b"
+      },
+      {
+        "name": "Netcore",
+        "slug": "netcore",
+        "image": "https://i5.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FNetcore.png?s=596d354e95c"
+      },
+      {
+        "name": "AWS",
+        "slug": "aws",
+        "image": "https://i2.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Faws.png?s=2dc3d0a108e"
+      },
+      {
+        "name": "Pinterest",
+        "slug": "pinterest",
+        "image": "https://i9.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FPinterest-1.png?s=904843d854d"
+      },
+      {
+        "name": "Audi",
+        "slug": "audi",
+        "image": "https://i5.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Faudi_c-2.png?s=55f25d10853"
+      },
+      {
+        "name": "Target",
+        "slug": "target",
+        "image": "https://i2.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FTarget.png?s=211f4939995"
+      },
+      {
+        "name": "Nissan",
+        "slug": "nissan",
+        "image": "https://i7.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FNissan.png?s=a7732d4b1c1"
+      },
+      {
+        "name": "Infosys",
+        "slug": "infosys",
+        "image": "https://i2.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FInfosys.png?s=295d5ded23d"
+      },
+      {
+        "name": "Remote",
+        "slug": "remote",
+        "image": "https://i1.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FRemote.png?s=e1fec407910"
+      },
+      {
+        "name": "Kyndryl",
+        "slug": "kyndryl",
+        "image": "https://i6.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Fkyndryl-1.png?s=6e87c303a2e"
+      },
+      {
+        "name": "Salesforce",
+        "slug": "salesforce",
+        "image": "https://i4.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FSalesforce.png?s=cff4b0dd1d4"
+      },
+      {
+        "name": "India Mobile Congress",
+        "slug": "india-mobile-congress",
+        "image": "https://i6.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FIndia-Mobile-Congress.png?s=cc60abaea7f"
+      }
+    ],
+    "column2": [
+      {
+        "name": "LinkedIn",
+        "slug": "linkedin",
+        "image": "https://i5.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FLinkedIn.png?s=fb517eee9a5"
+      },
+      {
+        "name": "WestRock",
+        "slug": "westrock",
+        "image": "https://i4.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FWestrock.png?s=4225e88320a"
+      },
+      {
+        "name": "Parexel",
+        "slug": "parexel",
+        "image": "https://i4.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FParexel.png?s=4b06f4f0c23"
+      },
+      {
+        "name": "ServiceNow",
+        "slug": "servicenow",
+        "image": "https://i9.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2Fservicenow_w.png?s=9e3f9c36569"
+      },
+      {
+        "name": "Infor",
+        "slug": "infor",
+        "image": "https://i1.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FInfor.png?s=17c7d52184c"
+      },
+      {
+        "name": "Branch",
+        "slug": "branch",
+        "image": "https://i7.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FBranch.png?s=70ccac59d4d"
+      },
+      {
+        "name": "DP World",
+        "slug": "dp-world",
+        "image": "https://i3.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2FDP_World_2021_logo.png?s=b3824a66269"
+      },
+      {
+        "name": "Adobe",
+        "slug": "adobe",
+        "image": "https://i4.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Fadobe_c-1.png?s=4e27f4a1d29"
+      },
+      {
+        "name": "Biocon",
+        "slug": "biocon",
+        "image": "https://i6.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FBiocon.png?s=cd6bbe67e02"
+      },
+      {
+        "name": "Bosch",
+        "slug": "bosch",
+        "image": "https://i9.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Fbosch_c.png?s=9d40e9f73b9"
+      },
+      {
+        "name": "FIGMA",
+        "slug": "figma",
+        "image": "https://i9.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FFigma.png?s=910ee72d498"
+      },
+      {
+        "name": "Google",
+        "slug": "google",
+        "image": "https://i4.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Fgoogle-1.png?s=45f56ecd180"
+      },
+      {
+        "name": "Cisco",
+        "slug": "cisco",
+        "image": "https://i9.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FCisco.png?s=d950110964b"
+      },
+      {
+        "name": "GE Vernova",
+        "slug": "ge-vernova",
+        "image": "https://i0.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FGE-Vernova.png?s=04f8e3d8f1d"
+      },
+      {
+        "name": "Shell",
+        "slug": "shell",
+        "image": "https://i5.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FShell-scaled.png?s=e545cea2ec0"
+      }
+    ],
+    "column3": [
+      {
+        "name": "Bessemer Venture Partners",
+        "slug": "bessemer-venture-partners",
+        "image": "https://i2.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FBessemer-venture-partners.png?s=2ff3dcb20a6"
+      },
+      {
+        "name": "SAP",
+        "slug": "sap",
+        "image": "https://i3.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Fsap.png?s=fb3ce6d7d68"
+      },
+      {
+        "name": "JEEP",
+        "slug": "jeep",
+        "image": "https://i7.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2Fjeep_w.png?s=7273edc2a4f"
+      },
+      {
+        "name": "Titan",
+        "slug": "titan",
+        "image": "https://i2.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FTitan.png?s=fda2e8a7da1"
+      },
+      {
+        "name": "Indeed",
+        "slug": "indeed",
+        "image": "https://i7.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FIndeed.png?s=70c2848e143"
+      },
+      {
+        "name": "Pega",
+        "slug": "pega",
+        "image": "https://i1.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FPega.png?s=1fb3f1e8557"
+      },
+      {
+        "name": "XPERI",
+        "slug": "xperi",
+        "image": "https://i7.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FXPERI.png?s=734348aecd7"
+      },
+      {
+        "name": "Gartner",
+        "slug": "gartner",
+        "image": "https://i2.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FGartner.png?s=2e72f0578d8"
+      },
+      {
+        "name": "Kyoorius",
+        "slug": "kyoorius",
+        "image": "https://i4.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FKyoorius.png?s=4d25169fc65"
+      },
+      {
+        "name": "Tech Mahindra",
+        "slug": "tech-mahindra",
+        "image": "https://i8.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FTech-Mahindra.png?s=e8fe93a7889"
+      },
+      {
+        "name": "Tata Communications",
+        "slug": "tata-communications",
+        "image": "https://i3.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FTata-Communications.png?s=f3c77483cfb"
+      },
+      {
+        "name": "Oracle",
+        "slug": "oracle",
+        "image": "https://i8.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FOracle.png?s=cafbe8858e9"
+      },
+      {
+        "name": "SymphonyAI",
+        "slug": "symphonyai",
+        "image": "https://i1.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FSymphonyAI.png?s=1683b959f80"
+      },
+      {
+        "name": "IBM",
+        "slug": "ibm",
+        "image": "https://i0.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Fibm_blue_logo.png?s=bbe037e045c"
+      },
+      {
+        "name": "Atlassian",
+        "slug": "atlassian",
+        "image": "https://i0.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FAtlassian.png?s=02f56d3c4c9"
+      }
+    ]
+  },
+  "contentBlocks": [
+    {
+      "id": "game-changing-experiences",
+      "title": "Game-Changing Experiences",
+      "description": "Stronger brand affinity, deeper audience connections, tangible business growth and all the legendary moments – GPJ is redefining sports experiences.",
+      "image": "https://www.gpj.com/wp-content/uploads/2025/03/Sports-Splash-Image-1296x729.png",
+      "link": "/gpj-sports-marketing/",
+      "linkText": "More",
+      "alignment": "right"
+    },
+    {
+      "id": "gpj-pov",
+      "title": "GPJ POV",
+      "description": "We see things differently. Get clear insight into everything experience from the world's leading experts on experiential marketing and design.",
+      "image": "https://www.gpjindia.com/wp-content/uploads/sites/6/2022/06/Cisco-GSX-Portals-reco.gif",
+      "link": "/news-insights/",
+      "linkText": "More",
+      "alignment": "left"
+    },
+    {
+      "id": "meet-the-makers",
+      "title": "Meet the makers",
+      "description": "Our experiences are made for and by humans. Meet some of the brilliant thinkers, designers and craftspeople who make us, us.",
+      "image": "https://www.gpjindia.com/wp-content/uploads/sites/6/2022/09/Picture16-1296x945.png",
+      "link": "/who-we-are/",
+      "linkText": "More",
+      "alignment": "right"
+    },
+    {
+      "id": "experience-at-heart",
+      "title": "Experience at heart",
+      "description": "We are a community made up of people passionate about what we do. That passion manifests in all shapes and sizes, from those who sweat the details to those who dream big – and everywhere in between.",
+      "image": "https://www.gpjindia.com/wp-content/uploads/sites/6/2022/09/Picture8.png",
+      "link": "/what-we-do/",
+      "linkText": "More",
+      "alignment": "left"
+    },
+    {
+      "id": "join-us",
+      "title": "Join us",
+      "description": "People are at the center of everything we do. If you're looking for a dynamic opportunity for creativity and growth – we should talk.",
+      "image": "https://www.gpjindia.com/wp-content/uploads/sites/6/2025/11/Join-us-1296x459.jpg",
+      "link": "/who-we-are/careers/",
+      "linkText": "More",
+      "alignment": "right",
+      "isCTA": true
+    }
+  ],
+  "globalLocations": [
+    {
+      "name": "BEIJING",
+      "slug": "beijing",
+      "image": "https://i9.swiftpic.io/gpj/upscale:0;cover:673,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FBEIJING.jpeg?s=95867480d1d"
+    },
+    {
+      "name": "DUBAI",
+      "slug": "dubai",
+      "image": "https://i6.swiftpic.io/gpj/upscale:0;cover:764,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FDUBAI_B-scaled.jpg?s=d6f3be8846a"
+    },
+    {
+      "name": "GUANGZHOU",
+      "slug": "guangzhou",
+      "image": "https://i9.swiftpic.io/gpj/upscale:0;cover:641,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FGUANGZHOU.jpeg?s=f9495ee9045"
+    },
+    {
+      "name": "HONG KONG",
+      "slug": "hong-kong",
+      "image": "https://i8.swiftpic.io/gpj/upscale:0;cover:643,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FHONG-KONG.png?s=e82dca87d7a"
+    },
+    {
+      "name": "LONDON",
+      "slug": "london",
+      "image": "https://i5.swiftpic.io/gpj/upscale:0;cover:522,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FLONDON_B.jpeg?s=573e9f4ddf1"
+    },
+    {
+      "name": "LOS ANGELES",
+      "slug": "los-angeles",
+      "image": "https://i0.swiftpic.io/gpj/upscale:0;cover:573,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FLOS-ANGELES-scaled.jpg?s=c0c8bda0fc5"
+    },
+    {
+      "name": "SÃO PAULO",
+      "slug": "sao-paulo",
+      "image": "https://i6.swiftpic.io/gpj/upscale:0;cover:645,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FSAO-PAULO-scaled.jpg?s=6c084d630c3"
+    },
+    {
+      "name": "SHENZHEN",
+      "slug": "shenzhen",
+      "image": "https://i8.swiftpic.io/gpj/upscale:0;cover:645,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FSHENZHEN_B.jpeg?s=c89f6a86be6"
+    },
+    {
+      "name": "AUSTIN",
+      "slug": "austin",
+      "image": "https://i5.swiftpic.io/gpj/upscale:0;cover:573,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FAUSTIN.jpg?s=d5827a84f6c"
+    },
+    {
+      "name": "BANGALORE",
+      "slug": "bangalore",
+      "image": "https://i2.swiftpic.io/gpj/upscale:0;cover:644,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FBANGALORE.jpg?s=250d5a88933"
+    },
+    {
+      "name": "BOSTON",
+      "slug": "boston",
+      "image": "https://i9.swiftpic.io/gpj/upscale:0;cover:570,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FBOSTON.jpg?s=f9933086d08"
+    },
+    {
+      "name": "NASHVILLE",
+      "slug": "nashville",
+      "image": "https://i4.swiftpic.io/gpj/upscale:0;cover:573,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FNASHVILLE-scaled.jpg?s=4bc8b678be7"
+    },
+    {
+      "name": "NEW YORK",
+      "slug": "new-york",
+      "image": "https://i5.swiftpic.io/gpj/upscale:0;cover:573,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FNEW-YORK-scaled.jpg?s=58631c02c3c"
+    },
+    {
+      "name": "SAN FRANCISCO",
+      "slug": "san-francisco",
+      "image": "https://i1.swiftpic.io/gpj/upscale:0;cover:1080,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FSAN-FRANCISCO.jpg?s=acd1c83f5c4"
+    },
+    {
+      "name": "SEOUL",
+      "slug": "seoul",
+      "image": "https://i8.swiftpic.io/gpj/upscale:0;cover:645,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FSEOUL.jpg?s=8900e3962f1"
+    },
+    {
+      "name": "SHANGHAI",
+      "slug": "shanghai",
+      "image": "https://i5.swiftpic.io/gpj/upscale:0;cover:550,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FSHANGHAI.jpeg?s=5341dae67ea"
+    },
+    {
+      "name": "SINGAPORE",
+      "slug": "singapore",
+      "image": "https://i4.swiftpic.io/gpj/upscale:0;cover:645,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FSINGAPORE.jpeg?s=4c17b6ec4ab"
+    },
+    {
+      "name": "STUTTGART",
+      "slug": "stuttgart",
+      "image": "https://i0.swiftpic.io/gpj/upscale:0;cover:644,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FSTUTTGART.jpg?s=09558021b84"
+    },
+    {
+      "name": "SYDNEY",
+      "slug": "sydney",
+      "image": "https://i2.swiftpic.io/gpj/upscale:0;cover:647,430,center/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2FSYDNEY.png?s=28fb85aafae"
+    }
+  ],
+  "navigation": {
+    "primary": [
+      {
+        "id": "45004",
+        "label": "Work",
+        "url": "/what-weve-done/"
+      },
+      {
+        "id": "45002",
+        "label": "Services",
+        "url": "/what-we-do/"
+      },
+      {
+        "id": "45000",
+        "label": "News & Insights",
+        "url": "/news-insights/"
+      },
+      {
+        "id": "45003",
+        "label": "About",
+        "url": "/who-we-are/"
+      },
+      {
+        "id": "45001",
+        "label": "Contact",
+        "url": "/contact/"
+      }
+    ],
+    "footer": {
+      "aboutUs": [
+        {
+          "label": "About us",
+          "url": "/who-we-are/"
+        },
+        {
+          "label": "Work",
+          "url": "/what-weve-done/"
+        },
+        {
+          "label": "Services",
+          "url": "/what-we-do/"
+        },
+        {
+          "label": "Our Clients",
+          "url": "/the-company-we-keep/"
+        },
+        {
+          "label": "Awards",
+          "url": "/awards/"
+        },
+        {
+          "label": "Accolades",
+          "url": "/accolades/"
+        }
+      ],
+      "legal": [
+        {
+          "label": "Privacy",
+          "url": "/privacy/"
+        },
+        {
+          "label": "CSR Policy",
+          "url": "/csr-policy/"
+        }
+      ],
+      "contact": [
+        {
+          "label": "Contact",
+          "url": "/contact/"
+        },
+        {
+          "label": "Careers",
+          "url": "/who-we-are/careers/"
+        }
+      ]
+    }
+  },
+  "countrySelector": [
+    {
+      "name": "USA",
+      "code": "us",
+      "url": "https://www.gpj.com/",
+      "flagIcon": "flag-icon-us"
+    },
+    {
+      "name": "Japan",
+      "code": "ja",
+      "url": "https://www.gpj.co.jp/",
+      "flagIcon": "flag-icon-ja"
+    },
+    {
+      "name": "ANZ",
+      "code": "au",
+      "url": "https://www.gpj.com.au/",
+      "flagIcon": "flag-icon-au"
+    },
+    {
+      "name": "Greater China",
+      "code": "cn",
+      "url": "https://www.gpjco.cn/",
+      "flagIcon": "flag-icon-cn"
+    },
+    {
+      "name": "Germany",
+      "code": "de",
+      "url": "https://gpj.de/",
+      "flagIcon": "flag-icon-de"
+    },
+    {
+      "name": "India",
+      "code": "in",
+      "url": "https://www.gpjindia.com/",
+      "flagIcon": "flag-icon-in",
+      "active": true
+    },
+    {
+      "name": "Brazil",
+      "code": "br",
+      "url": "https://br.gpj.com/",
+      "flagIcon": "flag-icon-br"
+    },
+    {
+      "name": "UK",
+      "code": "gb",
+      "url": "https://www.gpj.co.uk/",
+      "flagIcon": "flag-icon-gb"
+    },
+    {
+      "name": "South Korea",
+      "code": "kr",
+      "url": "https://kor.gpj.com/",
+      "flagIcon": "flag-icon-kr"
+    },
+    {
+      "name": "Singapore",
+      "code": "sg",
+      "url": "https://sg.gpj.com/",
+      "flagIcon": "flag-icon-sg"
+    },
+    {
+      "name": "Dubai",
+      "code": "ae",
+      "url": "https://ae.gpj.com/",
+      "flagIcon": "flag-icon-ae"
+    }
+  ],
+  "socialMedia": [
+    {
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/company/gpjindia/",
+      "icon": "fa-brands fa-linkedin-in"
+    },
+    {
+      "platform": "instagram",
+      "url": "https://www.instagram.com/gpj_india/",
+      "icon": "fa-brands fa-instagram"
+    },
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/gpjindia",
+      "icon": "fa-brands fa-facebook-f"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/channel/UCV33Z80Pbeewox3isURPWpg",
+      "icon": "fa-brands fa-youtube"
+    }
+  ],
+  "brandMessages": {
+    "tagline": "GPJ IS THE WORLD'S LEADING STRATEGIC EXPERIENCE MARKETING AGENCY",
+    "mission": "WE ARE STRATEGY LED , CREATIVE DRIVEN, AND TECHNOLOGY POWERED.",
+    "fullStatement": "GPJ IS THE WORLD'S LEADING EVENT AND EXPERIENTIAL MARKETING AGENCY. WE ARE STRATEGY LED , CREATIVE DRIVEN, AND TECHNOLOGY POWERED."
+  },
+  "assets": {
+    "logo": "https://www.gpjindia.com/wp-content/themes/main/dist/images/logo-white_bd68dd36cfd4aca51e8e.svg",
+    "favicon32": "https://www.gpjindia.com/wp-content/uploads/sites/6/2022/08/cropped-icon-32x32.png",
+    "favicon192": "https://www.gpjindia.com/wp-content/uploads/sites/6/2022/08/cropped-icon-192x192.png",
+    "appleTouchIcon": "https://www.gpjindia.com/wp-content/uploads/sites/6/2022/08/cropped-icon-180x180.png",
+    "projectLogo": "https://www.gpjindia.com/wp-content/themes/main/dist/images/pww-logo_8f8f4a7f75eb5ecaf571.jpg"
+  }
+}

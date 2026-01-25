@@ -1,0 +1,221 @@
+/* Header Component Styles */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-fixed);
+  padding: var(--space-lg) 0;
+  transition: all var(--transition-base);
+  background: transparent;
+}
+
+.header--scrolled {
+  background: rgba(26, 39, 68, 0.95);
+  backdrop-filter: blur(10px);
+  padding: var(--space-md) 0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header--menu-open {
+  background: var(--color-navy);
+}
+
+.header__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.header__logo {
+  font-family: var(--font-primary);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: var(--color-white);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: opacity var(--transition-base);
+}
+
+.header__logo:hover {
+  opacity: 0.9;
+  color: var(--color-white);
+}
+
+.header__logo-text {
+  color: var(--color-white);
+}
+
+.header__logo-y {
+  color: var(--color-gold);
+  font-style: italic;
+  margin: 0 -2px;
+  position: relative;
+}
+
+/* Navigation */
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+
+.header__nav-link {
+  font-family: var(--font-secondary);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-white);
+  text-decoration: none;
+  position: relative;
+  padding: var(--space-sm) 0;
+  transition: color var(--transition-base);
+}
+
+.header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-gold);
+  transition: width var(--transition-base);
+}
+
+.header__nav-link:hover,
+.header__nav-link--active {
+  color: var(--color-gold);
+}
+
+.header__nav-link:hover::after,
+.header__nav-link--active::after {
+  width: 100%;
+}
+
+/* Mobile Menu Toggle */
+.header__menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.header__menu-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-white);
+  transition: all var(--transition-base);
+  margin: 3px 0;
+}
+
+.header__menu-toggle--active .header__menu-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  background: var(--color-gold);
+}
+
+.header__menu-toggle--active .header__menu-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.header__menu-toggle--active .header__menu-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+  background: var(--color-gold);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-navy);
+  z-index: var(--z-modal);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  padding-top: 80px;
+}
+
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.mobile-nav-item {
+  font-family: var(--font-primary);
+  font-size: var(--fs-2xl);
+  color: var(--color-white);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color var(--transition-base);
+  position: relative;
+}
+
+.mobile-nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--color-gold);
+  transition: width var(--transition-base);
+}
+
+.mobile-nav-item:hover {
+  color: var(--color-gold);
+}
+
+.mobile-nav-item:hover::after {
+  width: 100%;
+}
+
+.mobile-menu__footer {
+  position: absolute;
+  bottom: var(--space-3xl);
+  text-align: center;
+}
+
+.mobile-menu__tagline {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--fs-md);
+  color: var(--color-gold);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__menu-toggle {
+    display: flex;
+  }
+}

@@ -1,0 +1,222 @@
+/* Intro Component – image, offset gold border, text, hover effects */
+
+.intro {
+  background: var(--color-cream);
+  padding: var(--space-6xl) 0;
+  position: relative;
+}
+
+.intro__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.intro__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--space-2xl), 5vw, var(--space-5xl));
+  align-items: center;
+}
+
+/* ----- Image block with offset gold border ----- */
+.intro__image-wrap {
+  --border-draw: 0%;
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  justify-self: end;
+  /* Ensure the border can sit "outside" but still be visible if we don't clip */
+}
+
+.intro__image-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  justify-self: end;
+  /* Ensure the border can sit "outside" but still be visible if we don't clip */
+}
+
+.border-svg {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  /* Initially hidden until animated */
+  filter: drop-shadow(0 0 8px rgba(201, 169, 98, 0.7));
+  /* Gold glow effect */
+}
+
+.border-svg rect {
+  stroke: var(--color-gold);
+  stroke-width: 3;
+  fill: none;
+  /* Use CSS variables to control animation */
+  stroke-dasharray: var(--border-perimeter, 360); /* Fallback to 360 if not calculated */
+  stroke-dashoffset: var(--border-draw, var(--border-perimeter, 360)); /* Fallback to 360 if not calculated */
+  /* Animate the dash offset to create drawing effect */
+  transition: stroke-dashoffset 0.01s linear;
+  /* Smooth animation */
+}
+
+.intro__image {
+  position: relative;
+  z-index: 1;
+  /* Above border */
+  width:99%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s ease;
+}
+
+.intro__image-wrap:hover .intro__image {
+  transform: scale(1.1);
+  filter: brightness(1.5);
+}
+
+.intro__image-wrap:hover .border-svg {
+  filter: drop-shadow(0 0 12px rgba(253, 175, 5, 0.9));
+  /* Enhanced glow on hover */
+}
+
+/* ----- Content ----- */
+.intro__content {
+  max-width: 520px;
+  justify-self: start;
+}
+
+.intro__headline {
+  font-family: var(--font-primary);
+  font-size: var(--fs-3xl);
+  font-weight: 400;
+  color: var(--color-navy);
+  margin-bottom: var(--space-md);
+  line-height: 1.2;
+  will-change: transform;
+}
+
+.intro__subheadline {
+  font-family: var(--font-accent);
+  font-size: var(--fs-2xl);
+  font-style: italic;
+  color: var(--color-gold);
+  margin-bottom: var(--space-xl);
+}
+
+.intro__divider {
+  width: 280px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+  margin: var(--space-xl) 0;
+  transform-origin: left center;
+  transform: scaleX(0);
+  /* Start hidden for GSAP to animate in */
+}
+
+.intro__description {
+  font-family: var(--font-secondary);
+  font-size: var(--fs-md);
+  font-weight: 300;
+  color: var(--color-navy);
+  line-height: 1.8;
+  position: relative;
+  /* Add padding to make highlight more visible */
+  padding: 8px 12px;
+  border-radius: 4px;
+  overflow: hidden;
+  /* Gold-colored highlight */
+  z-index: 1;
+}
+
+.intro__description::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--highlight-start, -20%);
+  width: var(--highlight-width, 40%);
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(248, 189, 62, 0.3), rgba(230, 159, 8, 0.5), rgba(255, 174, 0, 0.3), transparent);
+  z-index: -1;
+  transition: left 0.1s ease, width 0.1s ease;
+  /* Smooth animation */
+}
+
+/* ----- Responsive: tablet ----- */
+@media (max-width: 992px) {
+  .intro__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .intro__image-wrap {
+    max-width: 560px;
+    justify-self: center;
+  }
+
+  .intro__content {
+    max-width: 100%;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .intro__divider {
+    margin-left: auto;
+    margin-right: auto;
+    transform-origin: center;
+  }
+}
+
+/* ----- Responsive: mobile ----- */
+@media (max-width: 768px) {
+  .intro {
+    padding: var(--space-4xl) 0;
+  }
+
+  .intro__layout {
+    gap: var(--space-2xl);
+  }
+
+  .intro__image-wrap {
+    max-width: 100%;
+  }
+
+  .intro__border-frame {
+    --offset: 10px;
+    border-width: 2px;
+  }
+
+  .intro__image {
+    aspect-ratio: 16/10;
+  }
+
+  .intro__headline {
+    font-size: var(--fs-2xl);
+    text-align: center;
+  }
+
+  .intro__subheadline {
+    font-size: var(--fs-xl);
+    text-align: center;
+  }
+
+  .intro__description {
+    font-size: var(--fs-sm);
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro {
+    padding: var(--space-3xl) 0;
+  }
+
+  .intro__border-frame {
+    --offset: 8px;
+  }
+}

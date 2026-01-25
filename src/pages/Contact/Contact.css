@@ -1,0 +1,299 @@
+/* Contact Page Styles - Redesigned */
+
+.contact-page {
+  overflow-x: hidden;
+  background: var(--color-navy-dark);
+  /* Dark base to match video depth */
+}
+
+/* Hero Section with Video - Redesigned for full visibility */
+.contact-hero {
+  height: 100vh;
+  /* Fill the screen */
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #f2f2f2;
+  /* Light gray to match the video background for contain mode */
+}
+
+.contact-hero__video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Ensure the entire video is seen without cropping */
+  z-index: 0;
+  opacity: 1;
+}
+
+/* Targeted Overlay - lightened to show video character clearly */
+.contact-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(10, 25, 47, 0.1) 0%,
+      /* Much lighter */
+      rgba(10, 25, 47, 0.3) 100%);
+  z-index: 1;
+}
+
+.contact-hero__container {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  text-align: center;
+  /* Push content slightly up or down to avoid faces if needed */
+  transform: translateY(-20px);
+}
+
+.contact-hero__content {
+  max-width: 800px;
+  margin: 0 auto;
+  /* Add more prominent shadows to text for readability on clear video */
+}
+
+.contact-hero__label {
+  display: block;
+  font-family: var(--font-secondary);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--color-gold);
+  margin-bottom: var(--space-lg);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  /* Stronger shadow */
+}
+
+.contact-hero__title {
+  font-family: var(--font-primary);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  /* Slightly smaller to clear character */
+  font-weight: 400;
+  color: var(--color-white);
+  margin-bottom: var(--space-xl);
+  line-height: 1.1;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.contact-hero__subtitle {
+  font-family: var(--font-secondary);
+  font-size: var(--fs-md);
+  /* Reduced from LG */
+  color: rgba(255, 255, 255, 1);
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Contact Section - Redesigned for Glassmorphism */
+.contact-section {
+  padding: var(--space-7xl) 0;
+  background: #0d1a2d;
+  /* Slight offset from navy */
+  position: relative;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 10% 20%, rgba(201, 169, 98, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.contact-section__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: var(--space-5xl);
+  align-items: start;
+}
+
+/* Glassmorphism Form Wrapper */
+.contact-form-wrapper {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4xl);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-3xl);
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+}
+
+.contact-form__subtitle {
+  font-family: var(--font-secondary);
+  font-size: var(--fs-md);
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: var(--space-4xl);
+}
+
+/* Refined Inputs */
+.form-group {
+  margin-bottom: var(--space-xl);
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-secondary);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.form-input {
+  width: 100%;
+  padding: 1.2rem;
+  font-family: var(--font-secondary);
+  font-size: var(--fs-base);
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-gold);
+  box-shadow: 0 0 15px rgba(201, 169, 98, 0.1);
+}
+
+.form-select option {
+  background: var(--color-navy-dark);
+  color: white;
+}
+
+.form-textarea {
+  min-height: 180px;
+}
+
+.contact-form__submit {
+  width: auto;
+  min-width: 200px;
+  padding: 1.2rem 3rem;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: var(--space-lg);
+  border-radius: 2px;
+}
+
+/* Contact Info Card - Redesigned */
+.contact-info {
+  position: sticky;
+  top: 120px;
+}
+
+.contact-info__card {
+  background: linear-gradient(135deg, rgba(201, 169, 98, 0.1) 0%, rgba(201, 169, 98, 0.02) 100%);
+  border: 1px solid rgba(201, 169, 98, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4xl);
+  color: var(--color-white);
+}
+
+.contact-info__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--space-xl);
+  color: var(--color-gold);
+}
+
+.contact-info__item {
+  margin-bottom: var(--space-2xl);
+}
+
+.contact-info__label {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+.contact-info__value {
+  font-size: var(--fs-md);
+  font-family: var(--font-primary);
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info__value:hover {
+  color: var(--color-gold);
+}
+
+.contact-info__social {
+  display: flex;
+  gap: var(--space-xl);
+  margin-top: 0.5rem;
+}
+
+.contact-info__social a {
+  color: var(--color-white);
+  font-size: var(--fs-sm);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+}
+
+.contact-info__social a:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4xl);
+  }
+
+  .contact-info {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero__title {
+    font-size: 3.5rem;
+  }
+
+  .contact-form-wrapper {
+    padding: var(--space-2xl);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

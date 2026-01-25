@@ -1,0 +1,211 @@
+/* Philosophy Component Styles */
+
+.philosophy {
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: var(--space-6xl) 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  /* Ensure space for video */
+}
+
+.philosophy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201, 169, 98, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.philosophy__video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.6;
+  /* So text remains readable */
+  pointer-events: none;
+  /* Allow clicks to pass through to content */
+  min-height: 100vh;
+  /* Ensure it fills the section */
+}
+
+.philosophy__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  position: relative;
+  z-index: 1;
+}
+
+/* Main Philosophy */
+.philosophy__main {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--space-5xl);
+}
+
+.philosophy__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-3xl);
+  font-weight: 400;
+  color: var(--color-white);
+  margin-bottom: var(--space-xl);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.philosophy__title-line {
+  height: 2px;
+  background: var(--color-gold);
+  margin: var(--space-lg) auto 0;
+  width: 0;
+  /* Animated by GSAP */
+}
+
+.philosophy__description {
+  font-family: var(--font-secondary);
+  font-size: var(--fs-md);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+}
+
+.philosophy__divider {
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  margin: var(--space-3xl) auto;
+  max-width: 100%;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.philosophy__divider::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* The Y Section */
+.philosophy__y {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.philosophy__y-header {
+  position: relative;
+}
+
+.philosophy__y-title {
+  font-family: var(--font-secondary);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  display: block;
+  padding-top: var(--space-sm);
+}
+
+.philosophy__y-content {
+  padding-left: var(--space-xl);
+  border-left: 3px solid var(--color-gold);
+  /* Thicker and gold */
+}
+
+.philosophy__y-subtitle {
+  font-family: var(--font-accent);
+  font-size: var(--fs-2xl);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-gold);
+  margin-bottom: var(--space-xl);
+}
+
+.philosophy__points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-xl);
+}
+
+.philosophy__point {
+  font-family: var(--font-secondary);
+  font-size: var(--fs-md);
+  color: rgba(255, 255, 255, 0.9);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  padding-left: var(--space-lg);
+}
+
+.philosophy__point::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--color-gold);
+  border-radius: 50%;
+}
+
+.philosophy__point:last-child {
+  border-bottom: none;
+}
+
+.philosophy__conclusion {
+  font-family: var(--font-primary);
+  font-size: var(--fs-xl);
+  color: var(--color-white);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.philosophy__conclusion em {
+  font-style: italic;
+  color: var(--color-champagne);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .philosophy {
+    padding: var(--space-4xl) 0;
+  }
+
+  .philosophy__y {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .philosophy__y-content {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba(201, 169, 98, 0.3);
+    padding-top: var(--space-xl);
+  }
+
+  .philosophy__y-title {
+    padding-top: 0;
+  }
+}

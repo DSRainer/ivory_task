@@ -1,0 +1,248 @@
+/* Work Page Styles */
+
+.work-page {
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.work-hero {
+  background: var(--color-navy);
+  padding: calc(var(--space-6xl) + 80px) 0 var(--space-5xl);
+  position: relative;
+}
+
+.work-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(201, 169, 98, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.work-hero__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.work-hero__content {
+  max-width: 700px;
+}
+
+.work-hero__label {
+  display: block;
+  font-family: var(--font-secondary);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  margin-bottom: var(--space-lg);
+}
+
+.work-hero__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-4xl);
+  font-weight: 400;
+  color: var(--color-white);
+  margin-bottom: var(--space-xl);
+  line-height: 1.1;
+}
+
+.work-hero__subtitle {
+  font-family: var(--font-secondary);
+  font-size: var(--fs-md);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Work Section */
+.work-section {
+  background: var(--color-white);
+  padding: var(--space-5xl) 0;
+}
+
+.work-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.work-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4xl);
+}
+
+/* Work Card */
+.work-card {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.work-card:nth-child(even) {
+  direction: rtl;
+}
+
+.work-card:nth-child(even) > * {
+  direction: ltr;
+}
+
+.work-card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  aspect-ratio: 16/10;
+}
+
+.work-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slower);
+}
+
+.work-card:hover .work-card__image {
+  transform: scale(1.05);
+}
+
+.work-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(26, 39, 68, 0.6) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-xl);
+}
+
+.work-card__category {
+  font-family: var(--font-secondary);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-white);
+  background: var(--color-gold);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+}
+
+.work-card__content {
+  padding: var(--space-xl) 0;
+}
+
+.work-card__number {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: var(--fs-3xl);
+  font-weight: 300;
+  color: var(--color-gold);
+  opacity: 0.4;
+  margin-bottom: var(--space-md);
+}
+
+.work-card__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-2xl);
+  font-weight: 500;
+  color: var(--color-navy);
+  margin-bottom: var(--space-sm);
+}
+
+.work-card__location {
+  display: block;
+  font-family: var(--font-secondary);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  margin-bottom: var(--space-lg);
+}
+
+.work-card__description {
+  font-family: var(--font-secondary);
+  font-size: var(--fs-base);
+  color: var(--color-gray-600);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Why This Matters Section */
+.why-matters {
+  background: var(--color-cream);
+  padding: var(--space-5xl) 0;
+}
+
+.why-matters__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.why-matters__content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.why-matters__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-2xl);
+  font-weight: 400;
+  color: var(--color-navy);
+  margin-bottom: var(--space-xl);
+}
+
+.why-matters__title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--color-gold);
+  margin: var(--space-lg) auto 0;
+}
+
+.why-matters__description {
+  font-family: var(--font-secondary);
+  font-size: var(--fs-md);
+  color: var(--color-gray-600);
+  line-height: 1.8;
+  margin-bottom: var(--space-xl);
+}
+
+.why-matters__conclusion {
+  font-family: var(--font-accent);
+  font-size: var(--fs-lg);
+  font-style: italic;
+  color: var(--color-gold);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .work-card {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .work-card:nth-child(even) {
+    direction: ltr;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-hero {
+    padding: calc(var(--space-4xl) + 80px) 0 var(--space-3xl);
+  }
+
+  .work-hero__title {
+    font-size: var(--fs-3xl);
+  }
+}

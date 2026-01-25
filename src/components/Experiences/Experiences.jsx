@@ -20,7 +20,7 @@ const Experiences = () => {
         { backgroundSize: "0% 3px" },
         {
           backgroundSize: "100% 3px",
-          duration: 2.0,
+          duration: 3.0,
           ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,

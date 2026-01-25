@@ -36,12 +36,14 @@ const SelectedWork = () => {
         );
       }
 
-      // 2. Work Items Slide-in from outside
+      // 2. Work Items Slide-in & Border Animation
       siteData.selectedWork.forEach((_, index) => {
         const imageWrapper = imageRefs.current[index];
         const content = contentRefs.current[index];
 
         if (imageWrapper && content) {
+          const start = 'top 85%';
+
           // Slide Image from Left (-100vw)
           gsap.fromTo(imageWrapper,
             { x: '-100vw', opacity: 0 },
@@ -52,11 +54,52 @@ const SelectedWork = () => {
               ease: 'power3.out',
               scrollTrigger: {
                 trigger: imageWrapper,
-                start: 'top 85%',
+                start,
                 toggleActions: 'play none none none'
               }
             }
           );
+
+          // Gold Border Animation
+          const svgBorder = imageWrapper.querySelector('.border-svg-work');
+          if (svgBorder) {
+            const calculatePerimeter = () => {
+              const rect = imageWrapper.getBoundingClientRect();
+              const computedStyle = window.getComputedStyle(imageWrapper);
+              const width = parseFloat(computedStyle.width) || rect.width;
+              const height = parseFloat(computedStyle.height) || rect.height;
+              const perimeter = Math.round((width + height) * 2);
+
+              gsap.set(imageWrapper, {
+                '--border-perimeter': `${perimeter}`,
+                '--border-draw': perimeter,
+              });
+
+              gsap.to(svgBorder, {
+                opacity: 1,
+                duration: 0.1,
+                scrollTrigger: {
+                  trigger: imageWrapper,
+                  start,
+                  toggleActions: 'play none none none',
+                },
+              });
+
+              gsap.to(imageWrapper, {
+                '--border-draw': 0,
+                duration: 2,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: imageWrapper,
+                  start,
+                  toggleActions: 'play none none none',
+                },
+              });
+            };
+
+            calculatePerimeter();
+            setTimeout(calculatePerimeter, 100);
+          }
 
           // Slide Content from Right (100vw)
           gsap.fromTo(content,
@@ -68,7 +111,7 @@ const SelectedWork = () => {
               ease: 'power3.out',
               scrollTrigger: {
                 trigger: content,
-                start: 'top 85%',
+                start,
                 toggleActions: 'play none none none'
               }
             }
@@ -121,6 +164,9 @@ const SelectedWork = () => {
                   className="work-item__image"
                   loading="eager"
                 />
+                <svg className="border-svg-work" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <rect x="0" y="0" width="100" height="100" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeDasharray="0" strokeDashoffset="0" />
+                </svg>
                 <div className="work-item__overlay">
                   <span className="work-item__category">{work.category}</span>
                 </div>

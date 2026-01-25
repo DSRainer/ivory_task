@@ -32,44 +32,109 @@ const ClientLogos = () => {
         if (!track) return;
 
         // Duplicate content for seamless loop
-        const logos = track.children;
-        const totalLogos = logos.length;
-
-        // Loop through and append clones to make it truly seamless
-        for (let i = 0; i < totalLogos; i++) {
-          const clone = logos[i].cloneNode(true);
+        const logos = Array.from(track.children);
+        logos.forEach(logo => {
+          const clone = logo.cloneNode(true);
           track.appendChild(clone);
-        }
-
-        // Horizontal movement
-        const direction = index % 2 === 0 ? -1 : 1; // Alternate directions
-        const scrollWidth = track.scrollWidth / 2;
-
-        // Base animation
-        const marquee = gsap.to(track, {
-          x: direction * scrollWidth,
-          duration: 30 + (index * 5), // Varying speeds
-          ease: "none",
-          repeat: -1
         });
 
-        // Link animation speed/progression to scroll (Scrub)
-        ScrollTrigger.create({
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-          onUpdate: (self) => {
-            // Adjust timeScale based on scroll speed/direction
-            // This makes it feel reactive to scrolling
-            const scrollVelocity = self.getVelocity() / 100;
-            gsap.to(marquee, {
-              timeScale: 1 + Math.abs(scrollVelocity),
-              overwrite: true,
-              duration: 0.5
+        // Ensure images are loaded before starting animation to get correct width
+        const images = track.querySelectorAll('img');
+        let loadedCount = 0;
+        let isInitialized = false;
+        const totalImages = images.length;
+
+        const initAnimation = () => {
+          if (isInitialized) return;
+          isInitialized = true;
+
+          const scrollWidth = track.scrollWidth / 2;
+          const direction = index % 2 === 0 ? -1 : 1; // -1: Left, 1: Right
+
+          // For seamless right-to-left: from 0 to -scrollWidth
+          // For seamless left-to-right: from -scrollWidth to 0
+
+          if (direction === -1) {
+            gsap.set(track, { x: 0 });
+            const marquee = gsap.to(track, {
+              x: -scrollWidth,
+              duration: 50 + (index * 10),
+              ease: "none",
+              repeat: -1
+            });
+
+            ScrollTrigger.create({
+              trigger: sectionRef.current,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1,
+              onUpdate: (self) => {
+                const scrollVelocity = self.getVelocity() / 100;
+                gsap.to(marquee, {
+                  timeScale: 1 + Math.abs(scrollVelocity),
+                  overwrite: true,
+                  duration: 0.5
+                });
+              }
+            });
+          } else {
+            // Direction 1: Left to Right
+            // Start at -scrollWidth and move to 0
+            gsap.set(track, { x: -scrollWidth });
+            const marquee = gsap.to(track, {
+              x: 0,
+              duration: 50 + (index * 10),
+              ease: "none",
+              repeat: -1
+            });
+
+            ScrollTrigger.create({
+              trigger: sectionRef.current,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1,
+              onUpdate: (self) => {
+                const scrollVelocity = self.getVelocity() / 100;
+                gsap.to(marquee, {
+                  timeScale: 1 + Math.abs(scrollVelocity),
+                  overwrite: true,
+                  duration: 0.5
+                });
+              }
             });
           }
-        });
+        };
+
+        const checkDone = () => {
+          loadedCount++;
+          if (loadedCount >= totalImages) {
+            initAnimation();
+          }
+        };
+
+        // Fallback: Start animation anyway after 3 seconds if loading is slow
+        setTimeout(() => {
+          if (!isInitialized) {
+            console.warn("Animation started via timeout safety.");
+            initAnimation();
+          }
+        }, 3000);
+
+        if (totalImages === 0) {
+          initAnimation();
+        } else {
+          images.forEach(img => {
+            if (img.complete) {
+              checkDone();
+            } else {
+              img.addEventListener('load', checkDone);
+              img.addEventListener('error', (e) => {
+                console.error(`Failed to load logo: ${img.src}`, e);
+                checkDone();
+              });
+            }
+          });
+        }
       });
 
     }, sectionRef);

@@ -94,18 +94,21 @@
 
 .work-item__image-wrapper {
   position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-md);
+  /* Remove overflow: hidden to allow the offset border to be visible */
   aspect-ratio: 16/10;
   will-change: transform;
 }
 
 .work-item__image {
   width: 100%;
-  height: 120%;
+  height: 100%;
+  /* Changed to 100% to fit wrapper but we can keep 120% if parallax is needed */
   object-fit: cover;
   object-position: center;
+  border-radius: var(--radius-md);
   transition: transform var(--transition-slower);
+  position: relative;
+  z-index: 1;
 }
 
 .work-item:hover .work-item__image {
@@ -139,6 +142,35 @@
   background: var(--color-gold);
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius-sm);
+}
+
+/* Gold Border SVG Styles - Copied from Intro */
+.border-svg-work {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  /* Initially hidden until animated */
+  filter: drop-shadow(0 0 6px rgba(201, 169, 98, 0.5));
+  /* Gold glow effect */
+}
+
+.border-svg-work rect {
+  stroke: var(--color-gold);
+  stroke-width: 2.5;
+  fill: none;
+  /* Use CSS variables to control animation */
+  stroke-dasharray: var(--border-perimeter, 360);
+  stroke-dashoffset: var(--border-draw, var(--border-perimeter, 360));
+  transition: stroke-dashoffset 0.01s linear;
+}
+
+.work-item:hover .border-svg-work {
+  filter: drop-shadow(0 0 10px rgba(253, 175, 5, 0.8));
 }
 
 /* Content */

@@ -6,12 +6,11 @@ import './Intro.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const INTRO_IMAGE =
-  'https://images.pexels.com/photos/5970897/pexels-photo-5970897.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=2';
+const INTRO_VIDEO = '/intro_vid.mp4';
 
 const Intro = () => {
   const sectionRef = useRef(null);
-  const imageWrapRef = useRef(null);
+  const videoWrapRef = useRef(null);
   const headlineRef = useRef(null);
   const subheadlineRef = useRef(null);
   const dividerRef = useRef(null);
@@ -22,9 +21,9 @@ const Intro = () => {
       const trigger = sectionRef.current;
       const start = 'top 80%'; // Trigger a bit earlier
 
-      // Image: fade in
+      // Video Wrap: fade in
       gsap.fromTo(
-        imageWrapRef.current,
+        videoWrapRef.current,
         { opacity: 0, scale: 0.95 },
         {
           opacity: 1,
@@ -36,35 +35,34 @@ const Intro = () => {
       );
 
       // Gold Border Animation
-      // Gold Border Animation
-      const svgBorder = imageWrapRef.current.querySelector('.border-svg');
+      const svgBorder = videoWrapRef.current.querySelector('.border-svg');
       if (svgBorder) {
         // Calculate the perimeter after the element is rendered
         const calculatePerimeter = () => {
           // Get the dimensions of the container
-          const rect = imageWrapRef.current.getBoundingClientRect();
-          const computedStyle = window.getComputedStyle(imageWrapRef.current);
-          
+          const rect = videoWrapRef.current.getBoundingClientRect();
+          const computedStyle = window.getComputedStyle(videoWrapRef.current);
+
           // Calculate width and height including padding/borders
           const width = parseFloat(computedStyle.width) || rect.width;
           const height = parseFloat(computedStyle.height) || rect.height;
-          
+
           // Calculate the perimeter of the rectangle (2 * width + 2 * height)
           const perimeter = Math.round((width + height) * 2);
-          
+
           // Set the perimeter as a CSS variable
-          gsap.set(imageWrapRef.current, {
+          gsap.set(videoWrapRef.current, {
             '--border-perimeter': `${perimeter}`,
             '--border-draw': perimeter, // Start with full offset (invisible)
           });
-          
+
           // Show the SVG border and animate it
           gsap.to(svgBorder, {
             opacity: 1,
             duration: 0.1,
           });
-          
-          gsap.to(imageWrapRef.current, {
+
+          gsap.to(videoWrapRef.current, {
             '--border-draw': 0, // Animate to 0 to draw the border
             duration: 2,
             ease: 'power2.out',
@@ -75,10 +73,10 @@ const Intro = () => {
             },
           });
         };
-        
+
         // Try to calculate immediately
         calculatePerimeter();
-        
+
         // Also try after a small delay to ensure layout is complete
         setTimeout(calculatePerimeter, 50);
       }
@@ -118,8 +116,8 @@ const Intro = () => {
         { scaleX: 0 },
         {
           scaleX: 1,
-          duration: 4.5,
-          delay: 0.2,
+          duration: 4.0,
+          delay: 1.5,
           ease: 'power3.inOut', // Smooth start and end
           scrollTrigger: { trigger, start, toggleActions: 'play none none none' },
         }
@@ -135,28 +133,28 @@ const Intro = () => {
           duration: 1.2,
           delay: 0.9,
           ease: 'power3.out',
-          scrollTrigger: { 
-            trigger, 
-            start, 
+          scrollTrigger: {
+            trigger,
+            start,
             toggleActions: 'play none none none',
             scrub: true // Enable scrubbing for smooth animation
           },
         }
       );
-      
+
       // Highlighting animation for the description
       gsap.set(descriptionRef.current, {
         '--highlight-start': '-20%',
         '--highlight-width': '40%',
       });
-      
+
       gsap.to(descriptionRef.current, {
         '--highlight-start': '120%',
         duration: 2,
         ease: 'power2.inOut',
-        scrollTrigger: { 
-          trigger, 
-          start, 
+        scrollTrigger: {
+          trigger,
+          start,
           toggleActions: 'play none none none',
           scrub: 0.5 // Enable scrubbing for the highlight effect
         },
@@ -170,11 +168,14 @@ const Intro = () => {
     <section className="intro" ref={sectionRef}>
       <div className="intro__container">
         <div className="intro__layout">
-          <div className="intro__image-wrap" ref={imageWrapRef}>
-            <img
-              src={INTRO_IMAGE}
-              alt="Intimate gathering"
-              className="intro__image"
+          <div className="intro__video-wrap" ref={videoWrapRef}>
+            <video
+              src={INTRO_VIDEO}
+              className="intro__video"
+              autoPlay
+              loop
+              muted
+              playsInline
             />
             <svg className="border-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
               <rect x="5" y="5" width="90" height="90" fill="none" stroke="var(--color-gold)" strokeWidth="2" strokeDasharray="0" strokeDashoffset="0" />

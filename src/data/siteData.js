@@ -44,7 +44,7 @@ export const siteData = {
         "The intersection where perspectives meet.",
         "The reason people gather."
       ],
-      conclusion: "Conclayve is designed around that moment."
+      conclusion: "ConclaYve is designed around that moment."
     }
   },
 
@@ -54,13 +54,13 @@ export const siteData = {
       id: 1,
       title: "In Conversation With…",
       description: "Intimate dialogues with cultural leaders, creators, founders, and thinkers.",
-      image: "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: "https://images.pexels.com/photos/17954927/pexels-photo-17954927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       id: 2,
       title: "Panel Discussions",
       description: "Editorially curated panels designed for insight, not noise.",
-      image: "https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: "https://images.pexels.com/photos/7869306/pexels-photo-7869306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       id: 3,
@@ -72,7 +72,7 @@ export const siteData = {
       id: 4,
       title: "Private Salons & Roundtables",
       description: "Invite-only gatherings for leadership circles and premium communities.",
-      image: "https://images.pexels.com/photos/7551442/pexels-photo-7551442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: "https://images.pexels.com/photos/12689022/pexels-photo-12689022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     }
   ],
 
@@ -222,25 +222,25 @@ export const siteData = {
   // Client Logos (from original siteData.json)
   clientLogos: {
     column1: [
-      { name: "Oppo", image: "https://i5.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2FOppo-Logo.wine_.png?s=b59cbbd3c5d" },
-      { name: "META", image: "https://i7.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Fmeta_color_w.png?s=713386e3b12" },
-      { name: "AWS", image: "https://i2.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Faws.png?s=2dc3d0a108e" },
-      { name: "Audi", image: "https://i5.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Faudi_c-2.png?s=55f25d10853" },
-      { name: "Salesforce", image: "https://i4.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FSalesforce.png?s=cff4b0dd1d4" }
+      { name: "Oppo", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/OPPO_LOGO_2019.svg/1280px-OPPO_LOGO_2019.svg.png" },
+      { name: "META", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Meta-Logo.png/1280px-Meta-Logo.png" },
+      { name: "AWS", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/330px-Amazon_Web_Services_Logo.svg.png" },
+      { name: "Audi", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Audi_logo_detail.svg/1920px-Audi_logo_detail.svg.png" },
+      { name: "Salesforce", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/960px-Salesforce.com_logo.svg.png" }
     ],
     column2: [
-      { name: "LinkedIn", image: "https://i5.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FLinkedIn.png?s=fb517eee9a5" },
-      { name: "ServiceNow", image: "https://i9.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2024%2F03%2Fservicenow_w.png?s=9e3f9c36569" },
-      { name: "Adobe", image: "https://i4.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Fadobe_c-1.png?s=4e27f4a1d29" },
-      { name: "Google", image: "https://i4.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Fgoogle-1.png?s=45f56ecd180" },
-      { name: "Cisco", image: "https://i9.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FCisco.png?s=d950110964b" }
+      { name: "LinkedIn", image: "https://upload.wikimedia.org/wikipedia/commons/a/aa/LinkedIn_2021.svg" },
+      { name: "ServiceNow", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/ServiceNow_logo.svg/1280px-ServiceNow_logo.svg.png" },
+      { name: "Adobe", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Adobe_Corporate_logo.svg/960px-Adobe_Corporate_logo.svg.png" },
+      { name: "Google", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1280px-Google_2015_logo.svg.png" },
+      { name: "Cisco", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cisco_logo.svg/960px-Cisco_logo.svg.png" }
     ],
     column3: [
-      { name: "SAP", image: "https://i3.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Fsap.png?s=fb3ce6d7d68" },
-      { name: "IBM", image: "https://i0.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Fibm_blue_logo.png?s=bbe037e045c" },
-      { name: "Oracle", image: "https://i8.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FOracle.png?s=cafbe8858e9" },
-      { name: "Bosch", image: "https://i9.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F05%2Fbosch_c.png?s=9d40e9f73b9" },
-      { name: "Atlassian", image: "https://i0.swiftpic.io/gpj/upscale:0;contain:140,80,black/https%3A%2F%2Fgpjmulti.wpenginepowered.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2025%2F11%2FAtlassian.png?s=02f56d3c4c9" }
+      { name: "SAP", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/960px-SAP_2011_logo.svg.png" },
+      { name: "IBM", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/960px-IBM_logo.svg.png" },
+      { name: "Oracle", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/1280px-Oracle_logo.svg.png" },
+      { name: "Bosch", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Bosch-logo.svg/1280px-Bosch-logo.svg.png" },
+      { name: "Atlassian", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Atlassian-logo.svg/3840px-Atlassian-logo.svg.png" }
     ]
   },
 

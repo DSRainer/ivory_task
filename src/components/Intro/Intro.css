@@ -1,7 +1,7 @@
 /* Intro Component – image, offset gold border, text, hover effects */
 
 .intro {
-  background: var(--color-cream);
+  background: var(--color-gray-200);
   padding: var(--space-6xl) 0;
   position: relative;
 }
@@ -19,17 +19,9 @@
   align-items: center;
 }
 
-/* ----- Image block with offset gold border ----- */
-.intro__image-wrap {
+/* ----- Video block with offset gold border ----- */
+.intro__video-wrap {
   --border-draw: 0%;
-  position: relative;
-  width: 100%;
-  max-width: 580px;
-  justify-self: end;
-  /* Ensure the border can sit "outside" but still be visible if we don't clip */
-}
-
-.intro__image-wrap {
   position: relative;
   width: 100%;
   max-width: 580px;
@@ -56,18 +48,20 @@
   stroke-width: 3;
   fill: none;
   /* Use CSS variables to control animation */
-  stroke-dasharray: var(--border-perimeter, 360); /* Fallback to 360 if not calculated */
-  stroke-dashoffset: var(--border-draw, var(--border-perimeter, 360)); /* Fallback to 360 if not calculated */
+  stroke-dasharray: var(--border-perimeter, 360);
+  /* Fallback to 360 if not calculated */
+  stroke-dashoffset: var(--border-draw, var(--border-perimeter, 360));
+  /* Fallback to 360 if not calculated */
   /* Animate the dash offset to create drawing effect */
   transition: stroke-dashoffset 0.01s linear;
   /* Smooth animation */
 }
 
-.intro__image {
+.intro__video {
   position: relative;
   z-index: 1;
   /* Above border */
-  width:99%;
+  width: 99%;
   height: auto;
   aspect-ratio: 4/3;
   object-fit: cover;
@@ -75,12 +69,12 @@
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s ease;
 }
 
-.intro__image-wrap:hover .intro__image {
+.intro__video-wrap:hover .intro__video {
   transform: scale(1.1);
   filter: brightness(1.5);
 }
 
-.intro__image-wrap:hover .border-svg {
+.intro__video-wrap:hover .border-svg {
   filter: drop-shadow(0 0 12px rgba(253, 175, 5, 0.9));
   /* Enhanced glow on hover */
 }
@@ -110,8 +104,8 @@
 }
 
 .intro__divider {
-  width: 280px;
-  height: 2px;
+  width: 420px;
+  height: 4px;
   background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
   margin: var(--space-xl) 0;
   transform-origin: left center;
@@ -122,7 +116,7 @@
 .intro__description {
   font-family: var(--font-secondary);
   font-size: var(--fs-md);
-  font-weight: 300;
+  font-weight: 500;
   color: var(--color-navy);
   line-height: 1.8;
   position: relative;
@@ -154,7 +148,7 @@
     gap: var(--space-3xl);
   }
 
-  .intro__image-wrap {
+  .intro__video-wrap {
     max-width: 560px;
     justify-self: center;
   }
@@ -182,7 +176,7 @@
     gap: var(--space-2xl);
   }
 
-  .intro__image-wrap {
+  .intro__video-wrap {
     max-width: 100%;
   }
 
@@ -191,7 +185,7 @@
     border-width: 2px;
   }
 
-  .intro__image {
+  .intro__video {
     aspect-ratio: 16/10;
   }
 

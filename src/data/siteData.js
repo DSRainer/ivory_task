@@ -54,25 +54,25 @@ export const siteData = {
       id: 1,
       title: "In Conversation With…",
       description: "Intimate dialogues with cultural leaders, creators, founders, and thinkers.",
-      image: "https://images.pexels.com/photos/17954927/pexels-photo-17954927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: "./experiences/1.png"
     },
     {
       id: 2,
       title: "Panel Discussions",
       description: "Editorially curated panels designed for insight, not noise.",
-      image: "https://images.pexels.com/photos/7869306/pexels-photo-7869306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: "./experiences/2.png"
     },
     {
       id: 3,
       title: "Cocktail & Brand Launches",
       description: "Atmosphere-led unveilings where storytelling leads.",
-      image: "https://images.pexels.com/photos/5638732/pexels-photo-5638732.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: "./experiences/3.png"
     },
     {
       id: 4,
       title: "Private Salons & Roundtables",
       description: "Invite-only gatherings for leadership circles and premium communities.",
-      image: "https://images.pexels.com/photos/12689022/pexels-photo-12689022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: "./experiences/4.png"
     }
   ],
 

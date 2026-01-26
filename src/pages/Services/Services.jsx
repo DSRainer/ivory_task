@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { siteData } from '../../data/siteData';
@@ -8,163 +7,219 @@ import './Services.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
-  const pageRef = useRef(null);
+  const containerRef = useRef(null);
+  const heroRef = useRef(null);
+  const heroVideoRef = useRef(null);
+  const showcaseRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Hero animation
-      gsap.fromTo('.services-hero__content',
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power3.out',
-          delay: 0.3
+      // Hero Background Parallax
+      gsap.to(heroVideoRef.current, {
+        yPercent: 30,
+        ease: "none",
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true
         }
-      );
+      });
 
-      // Capabilities cards
-      gsap.fromTo('.capability-card',
-        { opacity: 0, y: 60 },
+      // Hero Title Animation
+      const heroTitle = heroRef.current.querySelector('.hero-title-massive');
+      gsap.fromTo(heroTitle,
+        { scale: 1.5, opacity: 0, y: 100 },
         {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          stagger: 0.1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.capabilities__grid',
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          }
-        }
-      );
-
-      // Experiences grid
-      gsap.fromTo('.experience-item',
-        { opacity: 0, scale: 0.95 },
-        {
-          opacity: 1,
           scale: 1,
-          duration: 0.6,
-          stagger: 0.15,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.experiences-grid',
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          }
-        }
-      );
-
-      // Signature platform
-      gsap.fromTo('.signature-platform__content',
-        { opacity: 0, x: -40 },
-        {
           opacity: 1,
-          x: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.signature-platform',
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          }
+          y: 0,
+          duration: 1.5,
+          ease: "expo.out"
         }
       );
 
-    }, pageRef);
+      // Hero Subtext Infinite Loop
+      const tickerLines = heroRef.current.querySelectorAll('.ticker-line');
+      const tickerTl = gsap.timeline({ repeat: -1 });
+
+      tickerLines.forEach((line) => {
+        tickerTl
+          .fromTo(line,
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }
+          )
+          .to(line,
+            { y: -20, opacity: 0, duration: 0.8, ease: "power2.in", delay: 1.5 }
+          );
+      });
+
+      // Showcase Items Animation
+      const showcaseItems = showcaseRef.current.querySelectorAll('.showcase-item');
+      showcaseItems.forEach((item, index) => {
+        const image = item.querySelector('.showcase-image');
+        const content = item.querySelector('.showcase-content');
+        const number = item.querySelector('.showcase-number');
+
+        // Image Parallax
+        gsap.to(image, {
+          yPercent: 20,
+          ease: "none",
+          scrollTrigger: {
+            trigger: item,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+          }
+        });
+
+        // Content Reveal
+        gsap.fromTo(content,
+          { x: index % 2 === 0 ? -100 : 100, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 1.2,
+            ease: "power4.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 70%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+
+        // Number Reveal
+        gsap.fromTo(number,
+          { scale: 0, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 0.1,
+            duration: 1.5,
+            ease: "expo.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 60%",
+            }
+          }
+        );
+      });
+
+      // Footer CTA Animation
+      const ctaTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.cta-section',
+          start: "top 60%",
+        }
+      });
+
+      ctaTl.from('.cta-highlight-box', {
+        scaleX: 0,
+        duration: 1,
+        ease: "expo.inOut",
+        stagger: 0.3,
+        transformOrigin: "left"
+      })
+        .from('.cta-highlight-text', {
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.3
+        }, "-=0.2");
+
+    }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <div className="services-page" ref={pageRef}>
+    <div className="services-redesign" ref={containerRef}>
       {/* Hero Section */}
-      <section className="services-hero">
-        <div className="services-hero__container">
-          <div className="services-hero__content">
-            <span className="services-hero__label">What We Do</span>
-            <h1 className="services-hero__title">Experiential strategy, executed with intent.</h1>
-            <p className="services-hero__subtitle">
-              We work with brands, institutions, and communities to design experiences that are thoughtful, purposeful, and culturally relevant.
-            </p>
-          </div>
+      <section className="services-hero-section" ref={heroRef}>
+        <div className="hero-video-container">
+          <video
+            ref={heroVideoRef}
+            src="/services_vid.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="hero-video"
+          />
+          <div className="hero-overlay" />
         </div>
-      </section>
 
-      {/* Capabilities Section */}
-      <section className="capabilities">
-        <div className="capabilities__container">
-          <div className="capabilities__header">
-            <span className="capabilities__label">Capabilities</span>
-            <h2 className="capabilities__title">What We Offer</h2>
-          </div>
-          <div className="capabilities__grid">
-            {siteData.capabilities.map((capability, index) => (
-              <article key={capability.id} className="capability-card">
-                <span className="capability-card__number">0{index + 1}</span>
-                <h3 className="capability-card__title">{capability.title}</h3>
-                <p className="capability-card__description">{capability.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+        <div className="hero-content-wrapper">
+          <h1 className="hero-title-massive">EXPERIENCES</h1>
 
-      {/* Experiences Section */}
-      <section className="experiences-section">
-        <div className="experiences-section__container">
-          <div className="experiences-section__header">
-            <span className="experiences-section__label">Experiences</span>
-            <h2 className="experiences-section__title">What We Curate</h2>
-          </div>
-          <div className="experiences-grid">
-            {siteData.experiences.map((experience) => (
-              <article key={experience.id} className="experience-item">
-                <div className="experience-item__image-wrapper">
-                  <img 
-                    src={experience.image} 
-                    alt={experience.title}
-                    className="experience-item__image"
-                    loading="lazy"
-                  />
-                  <div className="experience-item__overlay"></div>
-                </div>
-                <div className="experience-item__content">
-                  <h3 className="experience-item__title">{experience.title}</h3>
-                  <p className="experience-item__description">{experience.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+          <div className="scroll-indicator">
+            <span className="mouse">
+              <span className="wheel" />
+            </span>
+            <span className="scroll-text">Explore Our World</span>
 
-      {/* Signature Platform Section */}
-      <section className="signature-platform">
-        <div className="signature-platform__container">
-          <div className="signature-platform__content">
-            <span className="signature-platform__label">Signature Platforms</span>
-            <h2 className="signature-platform__title">{siteData.signaturePlatforms.title}</h2>
-            <p className="signature-platform__subtitle">{siteData.signaturePlatforms.subtitle}</p>
-            <div className="signature-platform__featured">
-              <h3 className="signature-platform__name">{siteData.signaturePlatforms.platform.name}</h3>
-              <p className="signature-platform__description">{siteData.signaturePlatforms.platform.description}</p>
+            <div className="hero-ticker-container">
+              <div className="ticker-line">Curated Environments</div>
+              <div className="ticker-line">Intentional Gatherings</div>
+              <div className="ticker-line">Lasting Impact</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="services-cta">
-        <div className="services-cta__container">
-          <div className="services-cta__content">
-            <h2 className="services-cta__title">Ready to create something meaningful?</h2>
-            <Link to="/contact" className="btn btn-primary">Start a Conversation</Link>
-          </div>
+      {/* Services Showcase Section */}
+      <section className="services-showcase-section" ref={showcaseRef}>
+        <div className="section-header">
+          <h2 className="section-title-loud">OUR OFFERINGS</h2>
         </div>
+
+        <div className="showcase-container">
+          {siteData.experiences.map((exp, index) => (
+            <div key={exp.id} className={`showcase-item ${index % 2 === 0 ? 'left' : 'right'}`}>
+              <div className="showcase-number">{String(index + 1).padStart(2, '0')}</div>
+              <div className="showcase-media">
+                <div className="image-reveal-wrapper">
+                  <img src={exp.image} alt={exp.title} className="showcase-image" />
+                </div>
+              </div>
+              <div className="showcase-content">
+                <span className="content-category">Experience Type {index + 1}</span>
+                <h3 className="content-title">{exp.title}</h3>
+                <p className="content-description">{exp.description}</p>
+                <button className="content-link">
+                  <span>Discover More</span>
+                  <div className="link-underline" />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Philosophy/CTA Section */}
+      <section className="cta-section">
+        <div className="cta-content">
+          <h2 className="cta-heading-loud">
+            <span className="cta-line-1">
+              LET'S <span className="cta-highlight-wrap">
+                <span className="cta-highlight-box" />
+                <span className="cta-highlight-text">BUILD</span>
+              </span> THE
+            </span>
+            <span className="cta-line-2">
+              <span className="cta-highlight-box" />
+              <span className="cta-highlight-text">EXTRAORDINARY.</span>
+            </span>
+          </h2>
+          <p className="cta-text">
+            Conclayve is for those who seek to move beyond the expected.
+            For those who understand that the most powerful tool is a
+            well-curated room.
+          </p>
+          <button className="massive-cta-btn">
+            START THE CONVERSATION
+          </button>
+        </div>
+        <div className="cta-background-text">CONCLAYVE</div>
       </section>
     </div>
   );

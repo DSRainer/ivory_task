@@ -170,6 +170,15 @@
   /* Gold glow effect */
 }
 
+@media (max-width: 768px) {
+  .border-svg-work {
+    top: -6px;
+    left: -6px;
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+  }
+}
+
 .border-svg-work rect {
   stroke: var(--color-gold);
   stroke-width: 2.5;

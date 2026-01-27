@@ -9,13 +9,13 @@
   --color-navy: #1a2744;
   --color-navy-dark: #0f1829;
   --color-navy-light: #2a3a5c;
-  
+
   /* Gold Accent Colors */
   --color-gold: #c9a962;
   --color-gold-light: #d4bc7d;
   --color-gold-dark: #a68b4b;
   --color-champagne: #f5e6c8;
-  
+
   /* Neutral Colors */
   --color-white: #ffffff;
   --color-off-white: #f8f6f3;
@@ -29,12 +29,12 @@
   --color-gray-700: #404040;
   --color-gray-800: #262626;
   --color-black: #0a0a0a;
-  
+
   /* Typography */
   --font-primary: 'Cormorant Garamond', Georgia, serif;
   --font-secondary: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-accent: 'Playfair Display', Georgia, serif;
-  
+
   /* Font Sizes - Fluid Typography */
   --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   --fs-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
@@ -46,7 +46,7 @@
   --fs-3xl: clamp(2.5rem, 2rem + 2.5vw, 4rem);
   --fs-4xl: clamp(3rem, 2rem + 5vw, 5rem);
   --fs-hero: clamp(3.5rem, 2.5rem + 5vw, 7rem);
-  
+
   /* Spacing */
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
@@ -58,29 +58,29 @@
   --space-4xl: 6rem;
   --space-5xl: 8rem;
   --space-6xl: 12rem;
-  
+
   /* Container */
   --container-max: 1400px;
   --container-padding: clamp(1rem, 5vw, 4rem);
-  
+
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
   --transition-slower: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
-  
+
   /* Border Radius */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
   --radius-xl: 24px;
-  
+
   /* Z-Index Scale */
   --z-base: 1;
   --z-dropdown: 100;
@@ -102,10 +102,19 @@
   padding: 0;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -114,11 +123,19 @@ body {
   line-height: 1.6;
   color: var(--color-gray-800);
   background-color: var(--color-white);
-  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-primary);
   font-weight: 400;
   line-height: 1.2;
@@ -178,7 +195,8 @@ button {
   background: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -199,18 +217,34 @@ ul, ol {
 }
 
 /* Text Utilities */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
 
 .text-uppercase {
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
 
-.text-gold { color: var(--color-gold); }
-.text-navy { color: var(--color-navy); }
-.text-white { color: var(--color-white); }
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-navy {
+  color: var(--color-navy);
+}
+
+.text-white {
+  color: var(--color-white);
+}
 
 /* Accent Text */
 .accent-text {
@@ -238,8 +272,12 @@ ul, ol {
   color: var(--color-white);
 }
 
-.bg-navy h1, .bg-navy h2, .bg-navy h3,
-.bg-navy h4, .bg-navy h5, .bg-navy h6 {
+.bg-navy h1,
+.bg-navy h2,
+.bg-navy h3,
+.bg-navy h4,
+.bg-navy h5,
+.bg-navy h6 {
   color: var(--color-white);
 }
 
@@ -344,13 +382,18 @@ ul, ol {
 }
 
 @media (max-width: 992px) {
-  .grid-3, .grid-4 {
+
+  .grid-3,
+  .grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .grid-2, .grid-3, .grid-4 {
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
     grid-template-columns: 1fr;
   }
 }
@@ -436,18 +479,17 @@ ul, ol {
   0% {
     background-position: -200% 0;
   }
+
   100% {
     background-position: 200% 0;
   }
 }
 
 .loading-shimmer {
-  background: linear-gradient(
-    90deg,
-    var(--color-gray-100) 25%,
-    var(--color-gray-200) 50%,
-    var(--color-gray-100) 75%
-  );
+  background: linear-gradient(90deg,
+      var(--color-gray-100) 25%,
+      var(--color-gray-200) 50%,
+      var(--color-gray-100) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }

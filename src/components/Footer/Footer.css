@@ -219,4 +219,19 @@
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
   }
+
+  .footer__socials {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl) var(--space-md);
+    justify-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .footer__social-link {
+    width: 100%;
+    justify-content: center;
+    font-size: var(--fs-xs);
+  }
 }

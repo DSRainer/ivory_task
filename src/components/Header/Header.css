@@ -216,6 +216,24 @@
   }
 
   .header__menu-toggle {
-    display: flex;
+    display: flex !important;
+    width: 44px;
+    /* Slightly larger touch target */
+    height: 44px;
+    margin-right: -5px;
+  }
+
+  .header__container {
+    padding: 0 var(--space-md) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__logo {
+    font-size: var(--fs-lg);
   }
 }

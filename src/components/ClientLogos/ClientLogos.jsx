@@ -48,60 +48,91 @@ const ClientLogos = () => {
           if (isInitialized) return;
           isInitialized = true;
 
-          const scrollWidth = track.scrollWidth / 2;
-          const direction = index % 2 === 0 ? -1 : 1; // -1: Left, 1: Right
+          const isMobile = window.innerWidth < 768;
 
-          // For seamless right-to-left: from 0 to -scrollWidth
-          // For seamless left-to-right: from -scrollWidth to 0
+          if (!isMobile) {
+            const scrollWidth = track.scrollWidth / 2;
+            const direction = index % 2 === 0 ? -1 : 1; // -1: Left, 1: Right
 
-          if (direction === -1) {
-            gsap.set(track, { x: 0 });
-            const marquee = gsap.to(track, {
-              x: -scrollWidth,
-              duration: 50 + (index * 10),
-              ease: "none",
-              repeat: -1
-            });
+            if (direction === -1) {
+              gsap.set(track, { x: 0 });
+              const marquee = gsap.to(track, {
+                x: -scrollWidth,
+                duration: 80 + (index * 20),
+                ease: "none",
+                repeat: -1
+              });
 
-            ScrollTrigger.create({
-              trigger: sectionRef.current,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: 1,
-              onUpdate: (self) => {
-                const scrollVelocity = self.getVelocity() / 100;
-                gsap.to(marquee, {
-                  timeScale: 1 + Math.abs(scrollVelocity),
-                  overwrite: true,
-                  duration: 0.5
-                });
-              }
-            });
+              ScrollTrigger.create({
+                trigger: sectionRef.current,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+                onUpdate: (self) => {
+                  const scrollVelocity = self.getVelocity() / 200;
+                  const newScale = 1 + Math.abs(scrollVelocity);
+                  gsap.to(marquee, {
+                    timeScale: Math.min(newScale, 3),
+                    overwrite: true,
+                    duration: 0.5
+                  });
+                }
+              });
+            } else {
+              gsap.set(track, { x: -scrollWidth });
+              const marquee = gsap.to(track, {
+                x: 0,
+                duration: 80 + (index * 20),
+                ease: "none",
+                repeat: -1
+              });
+
+              ScrollTrigger.create({
+                trigger: sectionRef.current,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+                onUpdate: (self) => {
+                  const scrollVelocity = self.getVelocity() / 200;
+                  const newScale = 1 + Math.abs(scrollVelocity);
+                  gsap.to(marquee, {
+                    timeScale: Math.min(newScale, 3),
+                    overwrite: true,
+                    duration: 0.5
+                  });
+                }
+              });
+            }
           } else {
-            // Direction 1: Left to Right
-            // Start at -scrollWidth and move to 0
-            gsap.set(track, { x: -scrollWidth });
-            const marquee = gsap.to(track, {
-              x: 0,
-              duration: 50 + (index * 10),
-              ease: "none",
-              repeat: -1
-            });
+            // Mobile: Vertical Scroll
+            // Use a slight delay to ensure the browser has calculated the new layout dimensions
+            setTimeout(() => {
+              const scrollHeight = track.scrollHeight / 2;
 
-            ScrollTrigger.create({
-              trigger: sectionRef.current,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: 1,
-              onUpdate: (self) => {
-                const scrollVelocity = self.getVelocity() / 100;
-                gsap.to(marquee, {
-                  timeScale: 1 + Math.abs(scrollVelocity),
-                  overwrite: true,
-                  duration: 0.5
+              // If scrollHeight is still 0, we use a fallback based on children count
+              const itemHeight = 75; // 60px height + 15px gap
+              const calculatedHeight = scrollHeight > 0 ? scrollHeight : (logos.length * itemHeight);
+
+              const direction = index % 2 === 0 ? -1 : 1; // -1: Up, 1: Down
+
+              if (direction === -1) {
+                gsap.set(track, { y: 0, opacity: 1 });
+                gsap.to(track, {
+                  y: -calculatedHeight,
+                  duration: 30 + (index * 10),
+                  ease: "none",
+                  repeat: -1
+                });
+              } else {
+                gsap.set(track, { y: -calculatedHeight, opacity: 1 });
+                gsap.to(track, {
+                  y: 0,
+                  duration: 30 + (index * 10),
+                  ease: "none",
+                  repeat: -1
                 });
               }
-            });
+            }, 100);
           }
         };
 
@@ -112,13 +143,13 @@ const ClientLogos = () => {
           }
         };
 
-        // Fallback: Start animation anyway after 3 seconds if loading is slow
+        // Fallback: Start animation anyway after 5 seconds if loading is slow
         setTimeout(() => {
           if (!isInitialized) {
             console.warn("Animation started via timeout safety.");
             initAnimation();
           }
-        }, 3000);
+        }, 5000);
 
         if (totalImages === 0) {
           initAnimation();

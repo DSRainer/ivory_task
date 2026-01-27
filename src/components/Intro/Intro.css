@@ -180,9 +180,23 @@
     max-width: 100%;
   }
 
+  /* Reduce border offset on mobile */
+  .border-svg {
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+  }
+
   .intro__border-frame {
     --offset: 10px;
     border-width: 2px;
+  }
+
+  .intro__divider {
+    width: 100%;
+    max-width: 280px;
+    height: 3px;
   }
 
   .intro__video {

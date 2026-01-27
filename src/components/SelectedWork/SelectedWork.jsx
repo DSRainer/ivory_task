@@ -61,8 +61,9 @@ const SelectedWork = () => {
           const start = 'top 85%';
 
           // Slide Image from Left (-100vw)
+          const isMobile = window.innerWidth < 768;
           gsap.fromTo(imageWrapper,
-            { x: '-100vw', opacity: 0 },
+            { x: isMobile ? '-20vw' : '-100vw', opacity: 0 },
             {
               x: 0,
               opacity: 1,
@@ -119,7 +120,7 @@ const SelectedWork = () => {
 
           // Slide Content from Right (100vw)
           gsap.fromTo(content,
-            { x: '100vw', opacity: 0 },
+            { x: isMobile ? '20vw' : '100vw', opacity: 0 },
             {
               x: 0,
               opacity: 1,

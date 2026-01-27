@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { siteData } from '../../data/siteData';
@@ -12,6 +12,22 @@ const SelectedWork = () => {
   const titleBorderRef = useRef(null);
   const imageRefs = useRef([]);
   const contentRefs = useRef([]);
+  const navigate = useNavigate();
+
+  const handleWorkClick = (index, url) => {
+    if (index !== 0) return; // Only first one for now
+
+    // Page Transition Animation
+    const tl = gsap.timeline({
+      onComplete: () => navigate(url)
+    });
+
+    tl.to('.app', {
+      opacity: 0,
+      duration: 0.5,
+      ease: 'power2.inOut'
+    });
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -119,6 +135,45 @@ const SelectedWork = () => {
         }
       });
 
+      // 3. Hover Animation for first item
+      const firstItem = imageRefs.current[0];
+      if (firstItem) {
+        const img = firstItem.querySelector('img');
+        const overlay = firstItem.querySelector('.work-item__overlay');
+
+        firstItem.addEventListener('mouseenter', () => {
+          gsap.to(img, {
+            scale: 1.15,
+            duration: 0.8,
+            ease: 'power2.out'
+          });
+          gsap.to(firstItem, {
+            boxShadow: '0 30px 60px rgba(212, 175, 55, 0.3)',
+            duration: 0.5
+          });
+          gsap.to(overlay, {
+            backgroundColor: 'rgba(212, 175, 55, 0.2)',
+            duration: 0.5
+          });
+        });
+
+        firstItem.addEventListener('mouseleave', () => {
+          gsap.to(img, {
+            scale: 1,
+            duration: 0.8,
+            ease: 'power2.out'
+          });
+          gsap.to(firstItem, {
+            boxShadow: 'none',
+            duration: 0.5
+          });
+          gsap.to(overlay, {
+            backgroundColor: 'transparent',
+            duration: 0.5
+          });
+        });
+      }
+
     }, sectionRef);
 
     return () => ctx.revert();
@@ -153,7 +208,11 @@ const SelectedWork = () => {
         {/* Work List */}
         <div className="selected-work__list">
           {siteData.selectedWork.map((work, index) => (
-            <article key={work.id} className="work-item">
+            <article
+              key={work.id}
+              className={`work-item ${index === 0 ? 'work-item--clickable' : ''}`}
+              onClick={() => handleWorkClick(index, '/work/stardust-awards')}
+            >
               <div
                 className="work-item__image-wrapper"
                 ref={el => imageRefs.current[index] = el}

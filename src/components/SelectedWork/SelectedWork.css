@@ -92,11 +92,22 @@
   direction: ltr;
 }
 
+.work-item--clickable {
+  cursor: pointer;
+}
+
 .work-item__image-wrapper {
   position: relative;
-  /* Remove overflow: hidden to allow the offset border to be visible */
+  overflow: hidden;
+  --border-draw: 100%;
+  /* Fallback */
+  transition: transform 0.3s ease;
   aspect-ratio: 16/10;
   will-change: transform;
+}
+
+.work-item--clickable:hover .work-item__image-wrapper {
+  transform: translateY(-10px);
 }
 
 .work-item__image {

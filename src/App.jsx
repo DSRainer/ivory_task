@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -13,6 +13,7 @@ import Work from './pages/Work/Work';
 import Services from './pages/Services/Services';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
+import StardustAwards from './pages/WorkDetail/StardustAwards';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -20,14 +21,32 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const location = useLocation();
 
-  // Scroll to top on route change
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+  // Aggressive Scroll to top and Refresh ScrollTrigger on route change
+  useLayoutEffect(() => {
+    // Disable browser's default scroll restoration
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
 
-  // Refresh ScrollTrigger on route change
-  useEffect(() => {
-    ScrollTrigger.refresh();
+    // Immediate scroll reset
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    // Delayed refresh to allow layout to settle
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+
+      // Ensure app is visible (fixes transition blank page)
+      gsap.to('.app', {
+        opacity: 1,
+        duration: 0.6,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+    }, 200);
+
+    return () => clearTimeout(timer);
   }, [location.pathname]);
 
   return (
@@ -40,6 +59,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/work/stardust-awards" element={<StardustAwards />} />
         </Routes>
       </main>
       <Footer />

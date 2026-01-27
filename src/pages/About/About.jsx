@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { siteData } from '../../data/siteData';
+import CTA from '../../components/CTA/CTA';
 import './About.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -12,67 +13,111 @@ const About = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Hero animation
-      gsap.fromTo('.about-hero__content',
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power3.out',
-          delay: 0.3
-        }
-      );
+      // 1. Hero Title: Character-by-character reveal
+      const titleSpans = gsap.utils.toArray('.about-hero__title span');
+      titleSpans.forEach((span, index) => {
+        const text = span.textContent;
+        // Efficient way to split text into chars
+        span.innerHTML = '';
+        text.split('').forEach(char => {
+          const charSpan = document.createElement('span');
+          charSpan.className = 'hero-char';
+          charSpan.innerHTML = char === ' ' ? '&nbsp;' : char;
+          charSpan.style.display = 'inline-block';
+          charSpan.style.whiteSpace = 'pre';
+          span.appendChild(charSpan);
+        });
 
-      // About content
-      gsap.fromTo('.about-main__content',
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.about-main',
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          }
-        }
-      );
+        const chars = span.querySelectorAll('.hero-char');
+        gsap.from(chars, {
+          y: 70,
+          opacity: 0,
+          rotateX: -90,
+          stagger: 0.03,
+          duration: 1.2,
+          delay: 0.5 + (index * 0.4),
+          ease: 'expo.out',
+        });
+      });
 
-      // Founder's note paragraphs
-      gsap.fromTo('.founders-note__paragraph',
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.15,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.founders-note__paragraphs',
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          }
-        }
-      );
+      // 2. Founders Note: Ghost Scroll Reveal
+      const paragraphs = gsap.utils.toArray('.founders-note__paragraph');
+      paragraphs.forEach((p) => {
+        const text = p.textContent;
+        p.innerHTML = text.split(' ').map(word =>
+          `<span class="ghost-word">${word}</span>`
+        ).join(' ');
 
-      // Values animation
-      gsap.fromTo('.value-item',
-        { opacity: 0, x: -30 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.6,
+        const words = p.querySelectorAll('.ghost-word');
+        gsap.from(words, {
+          opacity: 0.1,
+          duration: 0.1,
           stagger: 0.1,
-          ease: 'power3.out',
           scrollTrigger: {
-            trigger: '.values-section',
-            start: 'top 80%',
-            toggleActions: 'play none none none'
+            trigger: p,
+            start: 'top 75%',
+            end: 'bottom 40%',
+            scrub: true,
           }
+        });
+      });
+
+      // 3. Image Border Animation (reuse the calculated logic)
+      const animateBorders = (selector) => {
+        gsap.utils.toArray(selector).forEach((wrap) => {
+          const svgBorder = wrap.querySelector('.border-svg');
+          if (svgBorder) {
+            const calculatePerimeter = () => {
+              const rect = wrap.getBoundingClientRect();
+              const width = rect.width;
+              const height = rect.height;
+              const perimeter = Math.round((width + height) * 2);
+
+              gsap.set(wrap, {
+                '--border-perimeter': `${perimeter}`,
+                '--border-draw': perimeter,
+              });
+
+              gsap.to(svgBorder, {
+                opacity: 1,
+                duration: 0.5,
+                scrollTrigger: {
+                  trigger: wrap,
+                  start: 'top 80%',
+                }
+              });
+
+              gsap.to(wrap, {
+                '--border-draw': 0,
+                duration: 2.5,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: wrap,
+                  start: 'top 80%',
+                  toggleActions: 'play none none none',
+                },
+              });
+            };
+            calculatePerimeter();
+            setTimeout(calculatePerimeter, 100);
+          }
+        });
+      };
+
+      animateBorders('.has-border');
+
+      // 4. Value Items: premium slide and fade
+      gsap.from('.value-item', {
+        opacity: 0,
+        y: 40,
+        stagger: 0.2,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.values-grid',
+          start: 'top 85%',
         }
-      );
+      });
 
     }, pageRef);
 
@@ -81,37 +126,31 @@ const About = () => {
 
   return (
     <div className="about-page" ref={pageRef}>
-      {/* Hero Section */}
+      {/* Hero Section with Video */}
       <section className="about-hero">
+        <div className="about-hero__bg">
+          <video
+            src="/about_vid.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="about-hero__video"
+          />
+          <div className="about-hero__overlay"></div>
+        </div>
         <div className="about-hero__container">
           <div className="about-hero__content">
             <span className="about-hero__label">About Us</span>
-            <h1 className="about-hero__title">{siteData.about.headline}</h1>
+            <h1 className="about-hero__title">
+              <span>Ideas Breathe.</span>
+            </h1>
             <p className="about-hero__subtitle">{siteData.about.description}</p>
           </div>
         </div>
       </section>
 
-      {/* Main About Section */}
-      <section className="about-main">
-        <div className="about-main__container">
-          <div className="about-main__content">
-            <div className="about-main__text">
-              <p className="about-main__mission">{siteData.about.mission}</p>
-              <p className="about-main__belief">{siteData.about.belief}</p>
-            </div>
-            <div className="about-main__image">
-              <img 
-                src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="Team collaboration"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Founder's Note Section */}
+      {/* Founder's Note Section (The core of the page) */}
       <section className="founders-note">
         <div className="founders-note__container">
           <div className="founders-note__header">
@@ -127,39 +166,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="values-section">
-        <div className="values-section__container">
-          <div className="values-section__header">
-            <span className="values-section__label">Our Values</span>
-            <h2 className="values-section__title">The Conclayve Difference</h2>
-          </div>
-          <div className="values-grid">
-            {siteData.difference.points.map((point, index) => (
-              <div key={index} className="value-item">
-                <span className="value-item__number">0{index + 1}</span>
-                <span className="value-item__text">{point}</span>
-              </div>
-            ))}
-          </div>
-          <div className="values-tagline">
-            {siteData.difference.tagline.map((line, index) => (
-              <span key={index}>{line}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="about-cta">
-        <div className="about-cta__container">
-          <div className="about-cta__content">
-            <h2 className="about-cta__title">Let's Create Together</h2>
-            <p className="about-cta__description">For brands, platforms, and individuals seeking something considered, refined, and distinct.</p>
-            <Link to="/contact" className="btn btn-primary">Start a Conversation</Link>
-          </div>
-        </div>
-      </section>
+      {/* Global CTA Section */}
+      <CTA />
     </div>
   );
 };

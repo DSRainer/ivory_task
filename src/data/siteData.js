@@ -130,11 +130,13 @@ export const siteData = {
   foundersNote: {
     title: "Founder's Note",
     paragraphs: [
-      "Conclayve was shaped by our shared journey across cultural, media, and live entertainment platforms in multiple markets — and by a growing belief that the most meaningful moments don't always happen on the biggest stages.",
-      "Through our involvement in iconic experiences such as the Stardust Awards in New York, international talk platforms in London, and live concert tours across the United States, we've seen how powerful a thoughtfully curated room can be. While scale brings visibility, intimacy creates connection — and connection is what lasts.",
-      "Conclayve is our response to that understanding.",
-      "We created Conclayve to design refined, invitation-only gatherings where conversation leads, audiences are intentional, and every detail serves a purpose. From in-conversation evenings and panel discussions to cocktail launches and private salons, each experience is crafted to feel considered, personal, and memorable.",
-      "At its heart, Conclayve is about bringing the right people together — and allowing the moment to unfold naturally."
+      "Conclave was born from years spent moving through cultural spaces, media platforms, and live stages across borders — and from a quiet realization that kept coming back to us: the moments that stay with you rarely happen in the spotlight.",
+      "We've been part of grand productions. The Stardust Awards at The Plaza. International talk platforms in London. Concert tours that filled arenas across America. And a host of community events across the USA. And yes, there's magic in scale — the energy, the spectacle, the roar of a crowd. But somewhere along the way, we started chasing something else. Something smaller. Something closer.",
+      "We found it in the rooms where the houselights stayed low. Where fifty people leaned in instead of five thousand looking up. Where a single conversation could shift the entire night.",
+      "That's why we built Conclave.",
+      "We wanted to create spaces where presence matters more than attendance. Where you're not performing for a room — you're in it. In-conversation evenings. Panel discussions that don't feel scripted. Cocktail launches that linger. Private salons where ideas breathe.",
+      "Every gathering we design is an answer to a simple question: What if we stopped chasing bigger, and started building deeper?",
+      "Because at the end of the night, it's not the stage you remember. It's who was standing next to you — and what you said when no one else was listening."
     ],
     signature: "— The Founders, Conclayve"
   },

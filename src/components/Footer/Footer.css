@@ -40,14 +40,14 @@
   color: var(--color-white);
 }
 
-.footer__logo-text {
-  color: var(--color-white);
-}
-
-.footer__logo-y {
-  color: var(--color-gold);
-  font-style: italic;
-  margin: 0 -2px;
+.footer__logo-img {
+  height: 220px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  margin-top: -70px;
+  margin-bottom: -40px;
+  margin-left: -15px;
 }
 
 .footer__tagline {

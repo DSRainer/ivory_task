@@ -18,9 +18,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="footer__brand">
             <Link to="/" className="footer__logo">
-              <span className="footer__logo-text">CONCLA</span>
-              <span className="footer__logo-y">Y</span>
-              <span className="footer__logo-text">VE</span>
+              <img src="/logo.png" alt="Conclave" className="footer__logo-img" />
             </Link>
             <p className="footer__tagline">{siteData.footer.tagline}</p>
             <p className="footer__location">{siteData.footer.location}</p>

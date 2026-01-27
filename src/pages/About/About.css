@@ -74,7 +74,7 @@
 
 .about-hero__title {
   font-family: var(--font-primary);
-  font-size: clamp(3rem, 10vw, 8rem);
+  font-size: clamp(2rem, 8vw, 6rem);
   /* Slightly reduced max size */
   font-weight: 300;
   color: var(--color-white);
@@ -109,11 +109,10 @@
 .about-hero__subtitle {
   font-family: var(--font-secondary);
   font-size: var(--fs-lg);
-  color: rgba(2, 0, 0, 0.6);
+  color: rgba(218, 216, 216, 0.6);
   line-height: 1.6;
   max-width: 600px;
-  margin: 0 auto;
-  margin-left: 20px;
+  margin-left: 220px;
   letter-spacing: 0.05em;
 }
 

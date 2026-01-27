@@ -211,7 +211,6 @@ const Philosophy = () => {
         {/* The Y Section */}
         <div className="philosophy__y">
           <div className="philosophy__y-header">
-            <span className="philosophy__y-title" ref={yTitleRef}>THE "Y"</span>
           </div>
           <div className="philosophy__y-content">
             <h3 className="philosophy__y-subtitle" ref={ySubtitleRef}>{siteData.philosophy.theY.title}</h3>

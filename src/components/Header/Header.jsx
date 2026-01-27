@@ -26,16 +26,16 @@ const Header = () => {
   // Initial animation
   useEffect(() => {
     const tl = gsap.timeline({ delay: 0.5 });
-    
-    tl.fromTo(logoRef.current, 
+
+    tl.fromTo(logoRef.current,
       { opacity: 0, y: -20 },
       { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
     )
-    .fromTo(navRef.current?.children || [],
-      { opacity: 0, y: -20 },
-      { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'power3.out' },
-      '-=0.4'
-    );
+      .fromTo(navRef.current?.children || [],
+        { opacity: 0, y: -20 },
+        { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'power3.out' },
+        '-=0.4'
+      );
   }, []);
 
   // Close mobile menu on route change
@@ -86,16 +86,14 @@ const Header = () => {
 
   return (
     <>
-      <header 
+      <header
         ref={headerRef}
         className={`header ${isScrolled ? 'header--scrolled' : ''} ${isMobileMenuOpen ? 'header--menu-open' : ''}`}
       >
         <div className="header__container">
           {/* Logo */}
           <Link to="/" className="header__logo" ref={logoRef}>
-            <span className="header__logo-text">CONCLA</span>
-            <span className="header__logo-y">Y</span>
-            <span className="header__logo-text">VE</span>
+            <img src="/logo.png" alt="Conclave" className="header__logo-img" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -104,7 +102,7 @@ const Header = () => {
               <NavLink
                 key={item.id}
                 to={item.url}
-                className={({ isActive }) => 
+                className={({ isActive }) =>
                   `header__nav-link ${isActive ? 'header__nav-link--active' : ''}`
                 }
               >
@@ -114,7 +112,7 @@ const Header = () => {
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className={`header__menu-toggle ${isMobileMenuOpen ? 'header__menu-toggle--active' : ''}`}
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
@@ -128,7 +126,7 @@ const Header = () => {
       </header>
 
       {/* Mobile Menu Overlay */}
-      <div 
+      <div
         ref={mobileMenuRef}
         className={`mobile-menu ${isMobileMenuOpen ? 'mobile-menu--open' : ''}`}
       >

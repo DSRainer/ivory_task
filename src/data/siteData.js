@@ -38,13 +38,13 @@ export const siteData = {
     title: "The Power of the Room",
     description: "We believe impact is created at the intersection of people, place, and purpose. Every Conclayve experience is shaped around that intersection — thoughtfully, quietly, precisely.",
     theY: {
-      title: "The Y Is the Moment",
+      title: "Elevated Experiences",
       points: [
         "The pause before a conversation deepens.",
         "The intersection where perspectives meet.",
         "The reason people gather."
       ],
-      conclusion: "ConclaYve is designed around that moment."
+      conclusion: "Conclave is designed around that moment."
     }
   },
 
@@ -114,9 +114,9 @@ export const siteData = {
     conclusion: "Today, that legacy is distilled into smaller, more refined formats — where conversation leads, and impact lasts well beyond the evening."
   },
 
-  // The Conclayve Difference
+  // The Conclave Difference
   difference: {
-    title: "The Conclayve Difference",
+    title: "The Conclave Difference",
     points: [
       "Curated audiences.",
       "Design-led environments.",
@@ -138,13 +138,13 @@ export const siteData = {
       "Every gathering we design is an answer to a simple question: What if we stopped chasing bigger, and started building deeper?",
       "Because at the end of the night, it's not the stage you remember. It's who was standing next to you — and what you said when no one else was listening."
     ],
-    signature: "— The Founders, Conclayve"
+    signature: "— The Founders, Conclave"
   },
 
   // About Section
   about: {
     headline: "Built on credibility. Driven by curation.",
-    description: "Conclayve is a New York–based marketing and experiential company operating globally across the U.S., U.K., and international markets.",
+    description: "Conclave is a New York–based marketing and experiential company operating globally across the U.S., U.K., and international markets.",
     mission: "Our work spans large-scale cultural events, brand-led experiences, and civic dialogue platforms — all designed with a focus on intent, integrity, and long-term impact.",
     belief: "We believe experiences are not just moments, but platforms for connection, conversation, and change."
   },
@@ -190,7 +190,7 @@ export const siteData = {
 
   // CTA Section
   cta: {
-    title: "Create a Conclayve",
+    title: "Create a Conclave",
     description: "For brands, platforms, and individuals seeking something considered, refined, and distinct.",
     buttonText: "Start a Conversation"
   },
@@ -249,7 +249,7 @@ export const siteData = {
   // Footer
   footer: {
     tagline: "The art of gathering.",
-    copyright: "© 2026 Conclayve. All rights reserved.",
+    copyright: "© 2026 Conclave. All rights reserved.",
     location: "New York",
     socialMedia: [
       {

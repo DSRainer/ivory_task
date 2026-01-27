@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,8 +10,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const pageRef = useRef(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
+    if (!videoLoaded) return;
+
     const ctx = gsap.context(() => {
       // 1. Hero Title: Character-by-character reveal
       const titleSpans = gsap.utils.toArray('.about-hero__title span');
@@ -35,7 +38,7 @@ const About = () => {
           rotateX: -90,
           stagger: 0.03,
           duration: 1.2,
-          delay: 0.5 + (index * 0.4),
+          delay: 0.1 + (index * 0.4),
           ease: 'expo.out',
         });
       });
@@ -122,7 +125,7 @@ const About = () => {
     }, pageRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [videoLoaded]);
 
   return (
     <div className="about-page" ref={pageRef}>
@@ -136,6 +139,8 @@ const About = () => {
             muted
             playsInline
             className="about-hero__video"
+            onCanPlayThrough={() => setVideoLoaded(true)}
+            onLoadedData={() => setVideoLoaded(true)}
           />
           <div className="about-hero__overlay"></div>
         </div>

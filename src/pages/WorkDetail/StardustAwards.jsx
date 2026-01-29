@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ThreeDPhotoCarousel } from '../../components/ThreeDCarousel/ThreeDCarousel';
 import './StardustAwards.css';
 
 // Using the images from assets
@@ -227,6 +228,16 @@ const StardustAwards = () => {
                             </p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* 3D Photo Carousel - Event Gallery */}
+            <section className="carousel-section">
+                <div className="container">
+                    <h2 className="carousel-section__title loud-text" ref={addToRefs}>
+                        <span className="accent-text">Moments</span> from the Evening
+                    </h2>
+                    <ThreeDPhotoCarousel />
                 </div>
             </section>
 
